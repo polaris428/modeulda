@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "789377868689",
+    "firebase_url": "https://modeulda.firebaseio.com",
+    "project_id": "modeulda",
+    "storage_bucket": "modeulda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789377868689:android:c1d617bdf49972ca0f7030",
+        "android_client_info": {
+          "package_name": "com.example.modeulda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "789377868689-fdhlreee5rdo9gloqk9l1u6jc4lfl1en.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0axhhYh6VHbmOQOy-DZUVFDep-8c1k1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "789377868689-fdhlreee5rdo9gloqk9l1u6jc4lfl1en.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
