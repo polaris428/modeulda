@@ -11,14 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.modeulda.databinding.FragmentMainBinding;
+import com.example.modeulda.databinding.FragmentMyBinding;
 
 
-public class Main1Fragment extends Fragment {
-    FragmentMainBinding binding;
-
-    public static Main1Fragment newInstance() {
-        return new Main1Fragment();
+public class MyFragment extends Fragment {
+    FragmentMyBinding binding;
+    public static MyFragment newInstance() {
+        return new MyFragment();
     }
     private Context mContext;
     @Override
@@ -26,12 +25,12 @@ public class Main1Fragment extends Fragment {
         super.onAttach(context);
         mContext = context;
     }
-
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false);
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my, container, false);
+
+
         return binding.getRoot();
     }
 }
