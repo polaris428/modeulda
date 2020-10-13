@@ -1,4 +1,4 @@
-package com.example.modeulda;
+package com.example.modeulda.LoginActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
+
+import com.example.modeulda.MainActivity.MainActivity;
+import com.example.modeulda.R;
 
 public class SplashActivity extends AppCompatActivity {
 

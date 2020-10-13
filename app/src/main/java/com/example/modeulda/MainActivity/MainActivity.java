@@ -1,4 +1,4 @@
-package com.example.modeulda;
+package com.example.modeulda.MainActivity;
 
 import android.os.Bundle;
 
@@ -7,6 +7,10 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.modeulda.Alert.AlertFragment;
+import com.example.modeulda.My.MyFragment;
+import com.example.modeulda.R;
+import com.example.modeulda.Search.SearchFragment;
 import com.example.modeulda.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

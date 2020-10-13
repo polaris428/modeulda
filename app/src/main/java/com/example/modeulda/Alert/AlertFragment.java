@@ -1,4 +1,4 @@
-package com.example.modeulda;
+package com.example.modeulda.Alert;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.modeulda.R;
 import com.example.modeulda.databinding.FragmentAlertBinding;
 
 public class AlertFragment extends Fragment {
