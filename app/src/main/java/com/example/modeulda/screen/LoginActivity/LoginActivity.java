@@ -1,14 +1,17 @@
 package com.example.modeulda.screen.LoginActivity;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.provider.ContactsContract;
-
 import com.example.modeulda.R;
+import com.example.modeulda.Util.UserCache;
 import com.example.modeulda.databinding.ActivityLoginBinding;
+import com.example.modeulda.model.UserModel;
+import com.example.modeulda.screen.MainActivity.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -30,12 +33,35 @@ public class LoginActivity extends AppCompatActivity {
         binding.btnLoginSignin.setOnClickListener(view -> {
             login(binding.getEmail(), binding.getPassword());
         });
+        binding.btnLoginSignup.setOnClickListener(view -> {
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+        });
 
     }
 
+    //여기는 나중에 수정해야 함(토스트로 때운거 마꾸자 나중에)
     private void login(String email, String pw) {
-        if(email.isEmpty() || pw.isEmpty()){
-
+        if (email.isEmpty() || pw.isEmpty()) {
+            Toast.makeText(this, "빈칸을 전부 채워 주세요", Toast.LENGTH_SHORT).show();
+            return;
         }
+
+        firebaseFirestore
+                .collection("users")
+                .document(email)
+                .get()
+                .addOnSuccessListener(document -> {
+                    firebaseAuth
+                            .signInWithEmailAndPassword(email, pw)
+                            .addOnSuccessListener(runnable -> {
+                                UserCache.setUser(this, document.toObject(UserModel.class));
+                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                finish();
+                            })
+                            .addOnFailureListener(e -> {
+                                Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show();
+                            });
+                })
+                .addOnFailureListener(e -> Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show() );
     }
 }

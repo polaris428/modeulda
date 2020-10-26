@@ -7,8 +7,8 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.modeulda.screen.MainActivity.MainActivity;
 import com.example.modeulda.R;
+import com.example.modeulda.screen.LoginActivity.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -21,7 +21,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //로그인 창 만들고 난 뒤에  if문 넣어서 합시다.
-                SplashActivity.this.startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                SplashActivity.this.startActivity(new Intent(SplashActivity.this,  LoginActivity.class));
             }
         }, 1500);
     }
