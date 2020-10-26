@@ -1,4 +1,4 @@
-package com.example.modeulda.screen.Alert;
+package com.example.modeulda.screen.AlertActivity;
 
 import android.content.Context;
 import android.os.Bundle;

@@ -7,10 +7,10 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.modeulda.screen.Alert.AlertFragment;
-import com.example.modeulda.screen.My.MyFragment;
+import com.example.modeulda.screen.AlertActivity.AlertFragment;
+import com.example.modeulda.screen.MyActivity.MyFragment;
 import com.example.modeulda.R;
-import com.example.modeulda.screen.Search.SearchFragment;
+import com.example.modeulda.screen.SearchActivity.SearchFragment;
 import com.example.modeulda.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

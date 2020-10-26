@@ -1,4 +1,4 @@
-package com.example.modeulda.screen.Search;
+package com.example.modeulda.screen.SearchActivity;
 
 import android.content.Context;
 import android.os.Bundle;

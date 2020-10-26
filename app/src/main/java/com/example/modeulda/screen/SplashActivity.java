@@ -8,21 +8,27 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.modeulda.R;
+import com.example.modeulda.Util.UserCache;
 import com.example.modeulda.screen.LoginActivity.LoginActivity;
+import com.example.modeulda.screen.MainActivity.MainActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SplashActivity extends AppCompatActivity {
+    private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                //로그인 창 만들고 난 뒤에  if문 넣어서 합시다.
-                SplashActivity.this.startActivity(new Intent(SplashActivity.this,  LoginActivity.class));
-            }
-        }, 1500);
+        new Handler().postDelayed(() -> {
+                    if (firebaseAuth.getCurrentUser() != null && UserCache.getUser(this) != null)
+                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    else
+                        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                    finish();
+
+                }, 1500
+        );
     }
 }

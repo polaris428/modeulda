@@ -1,4 +1,4 @@
-package com.example.modeulda.screen.My;
+package com.example.modeulda.screen.MyActivity;
 
 import android.content.Context;
 import android.os.Bundle;
