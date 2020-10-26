@@ -1,4 +1,4 @@
-package com.example.modeulda.Alert;
+package com.example.modeulda.screen.MainActivity;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,16 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.modeulda.R;
-import com.example.modeulda.databinding.FragmentAlertBinding;
+import com.example.modeulda.databinding.FragmentMain2Binding;
 
-public class AlertFragment extends Fragment {
-
-    public static AlertFragment newInstance() {
-        return new AlertFragment();
-    }
-
-
-    FragmentAlertBinding binding;
+public class Main2Fragment extends Fragment {
+    FragmentMain2Binding binding;
     private Context mContext;
     @Override
     public void onAttach(@NonNull Context context) {
@@ -31,7 +25,7 @@ public class AlertFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_alert, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main2, container, false);
 
 
         return binding.getRoot();

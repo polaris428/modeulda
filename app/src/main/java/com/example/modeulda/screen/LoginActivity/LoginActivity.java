@@ -1,4 +1,4 @@
-package com.example.modeulda.LoginActivity;
+package com.example.modeulda.screen.LoginActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;

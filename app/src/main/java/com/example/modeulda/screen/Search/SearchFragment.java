@@ -1,4 +1,4 @@
-package com.example.modeulda.My;
+package com.example.modeulda.screen.Search;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,13 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.modeulda.R;
-import com.example.modeulda.databinding.FragmentMyBinding;
+import com.example.modeulda.databinding.FragmentSearchBinding;
 
-
-public class MyFragment extends Fragment {
-    FragmentMyBinding binding;
-    public static MyFragment newInstance() {
-        return new MyFragment();
+public class SearchFragment extends Fragment {
+    FragmentSearchBinding binding;
+    public static SearchFragment newInstance() {
+        return new SearchFragment();
     }
     private Context mContext;
     @Override
@@ -26,10 +25,12 @@ public class MyFragment extends Fragment {
         super.onAttach(context);
         mContext = context;
     }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_search, container, false);
 
 
         return binding.getRoot();
