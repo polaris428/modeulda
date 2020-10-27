@@ -8,13 +8,10 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.modeulda.R;
-import com.example.modeulda.Util.UserCache;
-import com.example.modeulda.screen.LoginActivity.LoginActivity;
 import com.example.modeulda.screen.MainActivity.MainActivity;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class SplashActivity extends AppCompatActivity {
-    private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+  //private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +19,12 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         new Handler().postDelayed(() -> {
-                    if (firebaseAuth.getCurrentUser() != null && UserCache.getUser(this) != null)
-                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                    else
-                        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-                    finish();
+//                    if (firebaseAuth.getCurrentUser() != null && UserCache.getUser(this) != null)
+//                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+//                    else
+//                        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+//                    finish();
+            startActivity(new Intent(SplashActivity.this, MainActivity.class));
 
                 }, 1500
         );
