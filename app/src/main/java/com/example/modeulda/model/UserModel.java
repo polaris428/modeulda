@@ -1,22 +1,22 @@
 package com.example.modeulda.model;
 
 public class UserModel {
-    private String name, email, time;
+    private String id, email, time;
 
     public UserModel(){}
 
-    public UserModel(String name, String email, String time) {
-        this.name = name;
+    public UserModel(String id, String email, String time) {
+        this.id = id;
         this.email = email;
         this.time = time;
     }
 
     public String getName() {
-        return name;
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String id) {
+        this.id = id;
     }
 
     public String getEmail() {
