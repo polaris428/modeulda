@@ -1,21 +1,16 @@
 package com.example.modeulda.model;
 
 public class UserModel {
-    private String id, email, time;
+    private String id;
+    private String email;
+    private String pw;
+    private String time;
 
-    public UserModel(){}
-
-    public UserModel(String id, String email, String time) {
-        this.id = id;
-        this.email = email;
-        this.time = time;
-    }
-
-    public String getName() {
+    public String getId() {
         return id;
     }
 
-    public void setName(String id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -27,6 +22,14 @@ public class UserModel {
         this.email = email;
     }
 
+    public String getPw() {
+        return pw;
+    }
+
+    public void setPw(String pw) {
+        this.pw = pw;
+    }
+
     public String getTime() {
         return time;
     }
@@ -34,5 +37,16 @@ public class UserModel {
     public void setTime(String time) {
         this.time = time;
     }
+
+
+    public UserModel(){}
+
+    public UserModel(String id, String email, String pw, String time) {
+        this.id = id;
+        this.email = email;
+        this.pw = pw;
+        this.time = time;
+    }
+
 
 }

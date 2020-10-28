@@ -1,14 +1,20 @@
 package com.example.modeulda.screen.LoginActivity;
 
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.example.modeulda.R;
 import com.example.modeulda.databinding.ActivityRegisterBinding;
+import com.example.modeulda.model.UserModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Date;
+import java.util.Locale;
 
 public class RegisterActivity extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
@@ -29,7 +35,35 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    //토스트들은 나중에 꼭 수정할것
     private void register(String id, String email, String pw1, String pw2) {
+        if (id.isEmpty() || email.isEmpty() || pw1.isEmpty() || pw2.isEmpty())
+            Toast.makeText(this, "빈칸을 전부 채워 주세여", Toast.LENGTH_SHORT).show();
+        if (!pw1.equals(pw2)) {
+            Toast.makeText(this, "비밀번호가 일치하지 않습니다", Toast.LENGTH_SHORT).show();
+        }
+        firebaseFirestore
+                .collection("users")
+                .document(email)
+                .set(new UserModel(id, email, pw1, getTime()))
+                .addOnSuccessListener(runnable -> {
+                    firebaseAuth
+                            .createUserWithEmailAndPassword(email, pw1)
+                            .addOnSuccessListener(runnable1 -> {
+                                Toast.makeText(this, "가입성공", Toast.LENGTH_SHORT).show();
+                                finish();
+                            })
+                            .addOnFailureListener(runnable1 -> {
+                                Toast.makeText(this, "가입실패", Toast.LENGTH_SHORT).show();
+                            });
+                })
+                .addOnFailureListener(runnable -> {
+                    Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show();
+                });
         return;
+    }
+
+    private String getTime() {
+        return new SimpleDateFormat("yyyy/MM/dd hh:mm aa", Locale.ENGLISH).format(new Date());
     }
 }
