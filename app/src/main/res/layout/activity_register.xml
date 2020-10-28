@@ -52,16 +52,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="이메일 확인하기"
+            android:text="이메일 수신 동의하기"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtRegiEmail" />
 
+        <Button
+            android:id="@+id/btnRegiEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이메일 확인하기"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cboxRegi" />
         <EditText
             android:id="@+id/edtRegiPw1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="비밀번호"
-            app:layout_constraintTop_toBottomOf="@+id/cboxRegi" />
+            app:layout_constraintTop_toBottomOf="@+id/btnRegiEmail" />
         <EditText
             android:id="@+id/edtRegiPw2"
             android:layout_width="match_parent"
