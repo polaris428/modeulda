@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     //여기는 나중에 수정해야 함(토스트로 때운거 마꾸자 나중에)
     private void login(String email, String pw) {
         if (email.isEmpty() || pw.isEmpty()) {
-            Toast.makeText(this, "빈칸을 전부 채워 주세요", Toast.LENGTH_SHORT).show();
+            binding.setErrorMsg("빈칸을 전부 채워 주세요");
             return;
         }
 
