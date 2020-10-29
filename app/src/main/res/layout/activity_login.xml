@@ -48,15 +48,17 @@
             app:layout_constraintRight_toRightOf="parent">
 
         </TextView>
+
         <TextView
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/edtLoginPw"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
             android:text="@={errorMsg, default=' '}"
-            android:textSize="10sp"
             android:textColor="@android:color/holo_red_dark"
-            />
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@+id/edtLoginPw"
+            tools:layout_editor_absoluteX="0dp" />
 
         <EditText
             android:id="@+id/edtLoginEmail"
