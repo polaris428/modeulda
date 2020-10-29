@@ -30,9 +30,9 @@ public class RegisterActivity extends AppCompatActivity {
         binding.setId("");
         binding.setPw1("");
         binding.setPw2("");
-        binding.btnRegiSignup.setOnClickListener(view -> {
-            register(binding.getId(), binding.getEmail(), binding.getPw1(), binding.getPw2());
-        });
+//        binding.btnRegiSignup.setOnClickListener(view -> {
+//            register(binding.getId(), binding.getEmail(), binding.getPw1(), binding.getPw2());
+//        });
     }
 
     //토스트들은 나중에 꼭 수정할것
