@@ -10,7 +10,7 @@
             type="String" />
 
         <variable
-            name="password"
+            name="pw"
             type="String" />
         <variable
             name="errorMsg"
@@ -89,7 +89,7 @@
             android:textColor="#ad9688"
             android:hint="PASSWORD"
             android:inputType="textPassword"
-            android:text="@={password}"
+            android:text="@={pw}"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
