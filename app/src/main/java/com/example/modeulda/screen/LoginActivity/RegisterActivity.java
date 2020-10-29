@@ -37,10 +37,13 @@ public class RegisterActivity extends AppCompatActivity {
 
     //토스트들은 나중에 꼭 수정할것
     private void register(String id, String email, String pw1, String pw2) {
-        if (id.isEmpty() || email.isEmpty() || pw1.isEmpty() || pw2.isEmpty())
+        if (id.isEmpty() || email.isEmpty() || pw1.isEmpty() || pw2.isEmpty()) {
             Toast.makeText(this, "빈칸을 전부 채워 주세여", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if (!pw1.equals(pw2)) {
             Toast.makeText(this, "비밀번호가 일치하지 않습니다", Toast.LENGTH_SHORT).show();
+            return;
         }
         firebaseFirestore
                 .collection("users")
