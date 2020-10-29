@@ -30,9 +30,10 @@ public class RegisterActivity extends AppCompatActivity {
         binding.setId("");
         binding.setPw1("");
         binding.setPw2("");
-//        binding.btnRegiSignup.setOnClickListener(view -> {
-//            register(binding.getId(), binding.getEmail(), binding.getPw1(), binding.getPw2());
-//        });
+        binding.btnRegiSignup.setOnClickListener(view -> {
+            register(binding.getId(), binding.getEmail(), binding.getPw1(), binding.getPw2());
+        });
+        binding.cboxRegi.setOnClickListener(view -> binding.setBtnen(binding.cboxRegi.isChecked()));
     }
 
     //토스트들은 나중에 꼭 수정할것
@@ -52,18 +53,18 @@ public class RegisterActivity extends AppCompatActivity {
                 .addOnSuccessListener(runnable -> {
                     firebaseAuth
                             .createUserWithEmailAndPassword(email, pw1)
-                            .addOnSuccessListener(runnable1 -> {
-                                Toast.makeText(this, "가입성공", Toast.LENGTH_SHORT).show();
-                                finish();
-                            })
-                            .addOnFailureListener(runnable1 -> {
-                                Toast.makeText(this, "가입실패", Toast.LENGTH_SHORT).show();
+                           .addOnSuccessListener(runnable1 -> {
+                               Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show();
+                               finish();
+                           })
+                            .addOnFailureListener(runnable2 -> {
+                                Toast.makeText(this, "실패", Toast.LENGTH_SHORT).show();
                             });
                 })
                 .addOnFailureListener(runnable -> {
                     Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show();
                 });
-        return;
+
     }
 
     private String getTime() {

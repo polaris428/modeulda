@@ -16,6 +16,9 @@
         <variable
             name="pw2"
             type="String" />
+        <variable
+            name="btnen"
+            type="Boolean" />
 
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -90,12 +93,13 @@
 
 
         <EditText
-            android:id="@+id/edtext"
+            android:id="@+id/edtRegiId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="50dp"
             android:hint="나선린"
+            android:text="@={id}"
             android:textSize="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -115,17 +119,18 @@
             android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtext">
+            app:layout_constraintTop_toBottomOf="@+id/edtRegiId">
 
         </TextView>
 
         <EditText
-            android:id="@+id/paswetit"
+            android:id="@+id/edtRegiEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="50dp"
             android:hint=""
+            android:text="@={email}"
             android:textSize="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -141,12 +146,13 @@
             android:text="이메일 수신동이"
             android:layout_marginRight="210dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/paswetit" />
+            app:layout_constraintTop_toBottomOf="@+id/edtRegiEmail" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="이메일 확인"
+            android:enabled="@{btnen, default=false}"
             app:layout_constraintTop_toBottomOf="@+id/cboxRegi"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -169,12 +175,13 @@
 
         </TextView>
         <EditText
-            android:id="@+id/pas"
+            android:id="@+id/edtRegiPw1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="50dp"
             android:hint=""
+            android:text="@={pw1}"
             android:textSize="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -183,21 +190,23 @@
         </EditText>
 
         <EditText
-            android:id="@+id/pas2"
+            android:id="@+id/edtRegiPw2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="50dp"
             android:hint="비밀번호 확인"
+            android:text="@={pw2}"
             android:textSize="20dp"
             android:layout_marginTop="10dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pas">
+            app:layout_constraintTop_toBottomOf="@id/edtRegiPw1">
 
         </EditText>
 
         <Button
+            android:id="@+id/btnRegiSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
