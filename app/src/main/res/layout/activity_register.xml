@@ -29,7 +29,8 @@
             android:text="회원가입"
             android:textSize="35sp"
             android:textColor="#31251b"
-            android:layout_marginBottom="600dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="750dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -48,8 +49,8 @@
             app:layout_constraintTop_toBottomOf="@id/text"/>
         <ImageView
             android:id="@+id/img"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:src="@drawable/ic_profile"
             android:layout_marginTop="40dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -60,11 +61,11 @@
         <Button
             android:id="@+id/button1"
             android:layout_width="150dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:text="프로필 사진 수정"
             android:background="#ad9688"
             android:textColor="#ffffff"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@+id/img"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -77,10 +78,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="250dp"
             android:text="아이디"
             android:textColor="#31251b"
-            android:textSize="30sp"
+            android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button1">
@@ -110,10 +110,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="250dp"
-            android:text="비밀번호"
+            android:text="이메일"
             android:textColor="#31251b"
-            android:textSize="30sp"
+            android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtext">
@@ -134,17 +133,79 @@
 
         </EditText>
 
+        <CheckBox
+            android:id="@+id/cboxRegi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="이메일 수신동이"
+            android:layout_marginRight="210dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/paswetit" />
 
-               <CheckBox
-                android:id="@+id/cboxRegi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:text="이메일 확인하기"
-                android:layout_margin="50dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/paswetit" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이메일 확인"
+            app:layout_constraintTop_toBottomOf="@+id/cboxRegi"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20dp">
 
+        </Button>
 
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="40dp"
+            android:text="비밀번호"
+            android:textColor="#31251b"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cboxRegi">
+
+        </TextView>
+        <EditText
+            android:id="@+id/pas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="50dp"
+            android:hint=""
+            android:textSize="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text4">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/pas2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="50dp"
+            android:hint="비밀번호 확인"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pas">
+
+        </EditText>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="로그인"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        </Button>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
