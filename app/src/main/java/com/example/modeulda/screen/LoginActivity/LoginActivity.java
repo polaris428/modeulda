@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         if (email.isEmpty() || pw.isEmpty()) {
             binding.setErrorMsg("빈칸을 전부 채워 주세요");
             return;
-        }
+        } 
 
         firebaseFirestore
                 .collection("users")
