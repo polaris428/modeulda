@@ -8,7 +8,7 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.modeulda.R;
-import com.example.modeulda.screen.MainActivity.MainActivity;
+import com.example.modeulda.screen.LoginActivity.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
   //private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -24,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
 //                    else
 //                        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
 //                    finish();
-            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
 
                 }, 1500
         );

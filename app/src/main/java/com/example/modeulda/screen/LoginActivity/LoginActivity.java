@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil;
 
 import com.example.modeulda.R;
 import com.example.modeulda.databinding.ActivityLoginBinding;
+import com.example.modeulda.screen.MainActivity.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -49,9 +50,15 @@ public class LoginActivity extends AppCompatActivity {
                 .get()
                 .addOnSuccessListener(document -> {
                     firebaseAuth
-                          .signInWithEmailAndPassword(email, pw);
-
+                            .signInWithEmailAndPassword(email, pw)
+                            .addOnSuccessListener(runnable -> {
+                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                finish();
+                            })
+                            .addOnFailureListener(runnable -> {
+                                Toast.makeText(this, "실패다 이년아", Toast.LENGTH_SHORT).show();
+                            });
                 })
-                .addOnFailureListener(e -> Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show() );
+                .addOnFailureListener(e -> Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show());
     }
 }

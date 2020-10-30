@@ -14,22 +14,25 @@ import com.example.modeulda.R;
 import com.example.modeulda.databinding.FragmentMain2Binding;
 
 public class Main2Fragment extends Fragment {
-    FragmentMain2Binding binding;
+
+    private FragmentMain2Binding binding;
     private Context mContext;
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         mContext = context;
     }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main2, container, false);
 
         binding.txtMain2to1.setOnClickListener(view -> switchFinF());
         return binding.getRoot();
     }
+
     private void switchFinF() {
-        ((MainActivity)getActivity()).switchFragment(new Main1Fragment());
+        ((MainActivity) getActivity()).switchFragment(new Main1Fragment());
     }
 }
