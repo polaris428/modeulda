@@ -1,7 +1,6 @@
 package com.example.modeulda.screen.MainActivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +16,8 @@ import com.example.modeulda.R;
 import com.example.modeulda.databinding.FragmentMainBinding;
 import com.example.modeulda.model.ThemeModel;
 
+import java.net.Socket;
+
 
 public class Main1Fragment extends Fragment {
 
@@ -29,6 +30,7 @@ public class Main1Fragment extends Fragment {
     private Context mContext;
     private FragmentMainBinding binding;
 
+    private Socket socket;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -39,6 +41,7 @@ public class Main1Fragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false);
 
         binding.setItems(items);
@@ -50,15 +53,14 @@ public class Main1Fragment extends Fragment {
         ThemeAdapter adapter = new ThemeAdapter();
         binding.recMain1Theme.setAdapter(adapter);
 
-        adapter.setOnItemClickListener(((view, item) -> {
-            Intent intent = new Intent(mContext, TListFragment.class);
-            startActivity(intent);
-        }));
+        adapter.setOnItemClickListener((view, item) -> {
+
+        });
 
         return binding.getRoot();
     }
 
-    //서버에서 주제 받아올 예정
+    //주제 불러오기
     public void onResume() {
         getThemes();
         super.onResume();
@@ -69,10 +71,58 @@ public class Main1Fragment extends Fragment {
 
     }
 
-
+    //오늘의 주제로 넘어가기
     private void switchFinF() {
         ((MainActivity) getActivity()).switchFragment(new Main2Fragment());
     }
 
+    //서버 관련
 
+//
+//    public void AsyncSend(String data) {
+//        DataThread thread = new DataThread(data);
+//        thread.start();
+//    }
+//    public void AsyncConnect(String initData, RecivedDataFunc recivedDataFunc) {
+//        ConnectThread thread = new ConnectThread(initData, recivedDataFunc);
+//        thread.start();
+//    }
+//
+//    public void AsyncListening(RecivedDataFunc recivedDataFunc) {
+//        ListenerThread thread = new ListenerThread(recivedDataFunc);
+//        thread.start();
+//    }
+//    class ConnectThread extends Thread {
+//        RecivedDataFunc recivedDataFunc;
+//        String connectPacket;
+//
+//        public ConnectThread(String connectPacket, RecivedDataFunc recivedDataFunc) {
+//            this.connectPacket = connectPacket;
+//            this.recivedDataFunc = recivedDataFunc;
+//        }
+//
+//
+//        public void run() {
+//            try {
+//                socket = new Socket("112.154.88.112", 20310);
+//
+//                AsyncListening(recivedDataFunc);
+//                AsyncSend(connectPacket);
+//
+//                runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        Toast.makeText(getApplicationContext(), "Connected", Toast.LENGTH_LONG).show();
+//                    }
+//                });
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
+//
+//    public <T> String ObjectToJson(T object) {
+//        Gson json = new Gson();
+//        return json.toJson(object);
+//    }
 }
