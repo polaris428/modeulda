@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+
         >
 
 
@@ -29,6 +30,7 @@
 
         <activity android:name=".screen.LoginActivity.RegisterActivity" />
         <activity android:name=".screen.LoginActivity.LoginActivity" />
+
         <activity android:name=".screen.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
