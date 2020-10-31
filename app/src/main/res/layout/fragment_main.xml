@@ -4,9 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <import type="com.example.modeulda.model.ThemeModel"/>
         <import type="androidx.databinding.ObservableArrayList"/>
 
+        <import type="com.example.modeulda.model.ThemeModel"/>
         <variable
             name="items"
             type="ObservableArrayList" />
@@ -54,13 +54,16 @@
             android:id="@+id/recMain1Theme"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="100dp"
-            tools:listitem="@{items}"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/line"
-            android:layout_marginTop="10dp">
+            app:layout_constraintVertical_bias="0.0"
+            tools:listitem="@layout/row_theme"
+            >
 
         </androidx.recyclerview.widget.RecyclerView>
 

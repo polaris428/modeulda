@@ -1,5 +1,6 @@
 package com.example.modeulda.screen.MainActivity;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -14,6 +15,7 @@ import java.util.List;
 
 
 public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ThemeHolder> {
+
     private List<ThemeModel> list = new ArrayList<>();
 
     private OnItemClickListener onItemClickListener;
@@ -21,24 +23,29 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ThemeHolder>
     public interface OnItemClickListener {
         void onItemClick(View view, ThemeModel item);
     }
+
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
-       this.onItemClickListener =onItemClickListener;
+        this.onItemClickListener = onItemClickListener;
     }
 
     @NonNull
     @Override
     public ThemeHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+       return new ThemeHolder(RowThemeBinding.inflate(LayoutInflater.from(parent.getContext()),parent , false));
+    }
+    public void setItem(List<ThemeModel> list) {
+        this.list = list;
+        notifyDataSetChanged();
     }
 
     @Override
     public void onBindViewHolder(@NonNull ThemeHolder holder, int position) {
-
+        ThemeModel themeModel = list.get(position);
+        holder.bind(themeModel, onItemClickListener);
     }
-
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
     static class ThemeHolder extends RecyclerView.ViewHolder {
@@ -49,7 +56,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ThemeHolder>
             this.binding = binding;
         }
 
-        void bin(ThemeModel themeModel, OnItemClickListener clickListener) {
+        void bind(ThemeModel themeModel, OnItemClickListener clickListener) {
             binding.setTitle(themeModel.getInRE());
             itemView.setOnClickListener(view -> clickListener.onItemClick(view, themeModel));
         }

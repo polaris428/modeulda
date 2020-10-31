@@ -27,7 +27,7 @@ public class Main1Fragment extends Fragment {
     private ObservableArrayList<ThemeModel> items = new ObservableArrayList<>();
 
     private Context mContext;
-    FragmentMainBinding binding;
+    private FragmentMainBinding binding;
 
 
     @Override
@@ -41,19 +41,26 @@ public class Main1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false);
 
-        binding.txtMain1to2.setOnClickListener(view -> switchFinF());
+        binding.setItems(items);
 
         binding.recMain1Theme.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
 
+        binding.txtMain1to2.setOnClickListener(view -> switchFinF());
+
         ThemeAdapter adapter = new ThemeAdapter();
         binding.recMain1Theme.setAdapter(adapter);
+
         adapter.setOnItemClickListener(((view, item) -> {
-            Intent intent = new Intent(mContext, )
+            Intent intent = new Intent(mContext, TListFragment.class);
+            startActivity(intent);
         }));
+
         return binding.getRoot();
     }
-
+//서버에서 주제 받아올 예정
     private void switchFinF() {
         ((MainActivity) getActivity()).switchFragment(new Main2Fragment());
     }
+
+
 }
