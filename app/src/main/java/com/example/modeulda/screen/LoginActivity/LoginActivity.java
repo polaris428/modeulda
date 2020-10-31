@@ -10,7 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.example.modeulda.R;
+import com.example.modeulda.Util.UserCache;
 import com.example.modeulda.databinding.ActivityLoginBinding;
+import com.example.modeulda.model.UserModel;
 import com.example.modeulda.screen.MainActivity.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -56,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                     firebaseAuth
                             .signInWithEmailAndPassword(email, pw)
                             .addOnSuccessListener(runnable -> {
+                                UserCache.setUser(this, document.toObject(UserModel.class));
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 finish();
                             })
