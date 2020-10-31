@@ -2,19 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/action_1"
-        android:title="Main"
+        android:title="홈"
+        android:icon="@drawable/ic__main"
        />
     <item
         android:id="@+id/action_2"
-        android:title="search"
+        android:title="모아보기"
+        android:icon="@drawable/ic__collect"
         />
     <item
         android:id="@+id/action_3"
-        android:title="alert"
+        android:title="알람"
+        android:icon="@drawable/ic__alarm"
        />
     <item
         android:id="@+id/action_4"
-        android:title="my"
+        android:title="메인페이지"
+        android:icon="@drawable/ic__my"
         />
 
 </menu>
