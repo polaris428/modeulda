@@ -57,7 +57,19 @@ public class Main1Fragment extends Fragment {
 
         return binding.getRoot();
     }
-//서버에서 주제 받아올 예정
+
+    //서버에서 주제 받아올 예정
+    public void onResume() {
+        getThemes();
+        super.onResume();
+    }
+
+    private void getThemes() {
+        items.clear();
+
+    }
+
+
     private void switchFinF() {
         ((MainActivity) getActivity()).switchFragment(new Main2Fragment());
     }
