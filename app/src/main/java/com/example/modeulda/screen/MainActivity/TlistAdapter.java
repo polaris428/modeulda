@@ -21,6 +21,9 @@ public class TlistAdapter extends RecyclerView.Adapter<TlistAdapter.TlistHolder>
     public interface OnItemClickListener {
         void onItemClick(View view, WrittenModel item);
     }
+    public void setOnItemClickListener(TlistAdapter.OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
 
     @NonNull
     @Override
