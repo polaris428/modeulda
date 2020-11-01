@@ -19,6 +19,16 @@
         <variable
             name="btnen"
             type="Boolean" />
+        <variable
+            name="idError"
+            type="String" />
+        <variable
+            name="pw1Error"
+            type="String" />
+        <variable
+            name="pw2Error"
+            type="String" />
+
 
     </data>
     <ScrollView
@@ -109,7 +119,7 @@
                 android:id="@+id/msg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="이미 있는 아이디 입니다"
+                android:text="@={idError, default=` `}"
                 android:textColor="#cb4444"
                 android:layout_marginLeft="40dp"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -206,7 +216,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
-                android:text="사용할 수 없는 비밀 번호 입니다"
+                android:text="@={pw1Error, default=` `}"
                 android:textColor="#cb4444"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -234,7 +244,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
-                android:text="비밀번호가 일치 하지 않습니다"
+                android:text="@={pw2Error, default=` `}"
                 android:textColor="#cb4444"
 
                 app:layout_constraintLeft_toLeftOf="parent"
