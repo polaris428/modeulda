@@ -1,15 +1,19 @@
 package com.example.modeulda.model;
 
+import java.util.List;
+
 public class WrittenModel {
     private String title;
     private String author;
-    private String content;
     private String time;
     private String likes;
     private String theme;
+    private int pages;
+    private List<String> content;
 
     public WrittenModel(){}
-    public WrittenModel(String title, String author, String content, String time, String likes, String theme){
+
+    public WrittenModel(String title, String author, List<String> content, String time, String likes, String theme){
         this.title = title;
         this.author = author;
         this.content = content;
@@ -31,14 +35,6 @@ public class WrittenModel {
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 
     public String getTime() {
@@ -63,5 +59,20 @@ public class WrittenModel {
 
     public void setTheme(String theme) {
         this.theme = theme;
+    }
+    public int getPages() {
+        return pages;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
+    }
+
+    public List<String> getContent() {
+        return content;
+    }
+
+    public void setContent(List<String> content) {
+        this.content = content;
     }
 }

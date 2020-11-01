@@ -57,7 +57,7 @@ public class TlistAdapter extends RecyclerView.Adapter<TlistAdapter.TlistHolder>
 
         void bind(WrittenModel model, OnItemClickListener onClickListener) {
             binding.setId(model.getAuthor());
-            binding.setContent(model.getContent());
+            binding.setContent(model.getContent().get(0));
             binding.setLikes(model.getLikes());
             binding.setTimeAgo(model.getTime());
             binding.setTitle(model.getTitle());
