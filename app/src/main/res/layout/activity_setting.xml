@@ -4,13 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD:app/src/main/res/layout/activity_satting.xml
-    tools:context=".satting"
     android:background="@drawable/ic__backgrand"
-=======
     tools:context=".SettingActivity"
->>>>>>> 08e2a49b68f9f5f04f4438a9b9d90b9ae7a24f79:app/src/main/res/layout/activity_setting.xml
-    >
+>
 
     <ImageButton
         android:layout_width="wrap_content"
