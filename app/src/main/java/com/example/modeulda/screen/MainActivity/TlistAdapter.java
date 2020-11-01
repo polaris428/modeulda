@@ -3,7 +3,6 @@ package com.example.modeulda.screen.MainActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,12 +16,10 @@ import java.util.List;
 public class TlistAdapter extends RecyclerView.Adapter<TlistAdapter.TlistHolder> {
     private List<WrittenModel> list = new ArrayList<>();
 
-    private AdapterView.OnItemClickListener onItemClickListener;
+    private OnItemClickListener onItemClickListener;
 
-
-
-    public interface OnItemClickListner {
-        void onItemClick(View view, WrittenModel writtenModel);
+    public interface OnItemClickListener {
+        void onItemClick(View view, WrittenModel item);
     }
 
     @NonNull
@@ -47,7 +44,6 @@ public class TlistAdapter extends RecyclerView.Adapter<TlistAdapter.TlistHolder>
     }
 
 
-
     static class TlistHolder extends RecyclerView.ViewHolder {
         private RowWrittenBinding binding;
 
@@ -56,8 +52,13 @@ public class TlistAdapter extends RecyclerView.Adapter<TlistAdapter.TlistHolder>
             this.binding = binding;
         }
 
-        void bind(WrittenModel model, AdapterView.OnItemClickListener onClickListener) {
-            binding.setContent();
+        void bind(WrittenModel model, OnItemClickListener onClickListener) {
+            binding.setId(model.getAuthor());
+            binding.setContent(model.getContent());
+            binding.setLikes(model.getLikes());
+            binding.setTimeAgo(model.getTime());
+            binding.setTitle(model.getTitle());
+            itemView.setOnClickListener(view -> onClickListener.onItemClick(view, model));
         }
     }
 }

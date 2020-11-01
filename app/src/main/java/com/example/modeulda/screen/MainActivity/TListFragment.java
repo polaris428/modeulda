@@ -37,7 +37,6 @@ public class TListFragment extends Fragment {
 
         TlistAdapter adapter = new TlistAdapter();
         binding.recTlist.setAdapter(adapter);
-
         return binding.getRoot();
     }
 }

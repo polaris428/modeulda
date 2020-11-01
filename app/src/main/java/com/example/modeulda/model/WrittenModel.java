@@ -1,14 +1,21 @@
 package com.example.modeulda.model;
 
 public class WrittenModel {
-    private String title, author, content, time, likes;
+    private String title;
+    private String author;
+    private String content;
+    private String time;
+    private String likes;
+    private String theme;
+
     public WrittenModel(){}
-    public WrittenModel(String title, String author, String content, String time, String likes){
+    public WrittenModel(String title, String author, String content, String time, String likes, String theme){
         this.title = title;
         this.author = author;
         this.content = content;
         this.time = time;
         this.likes = likes;
+        this.theme = theme;
     }
     public String getTitle() {
         return title;
@@ -50,5 +57,11 @@ public class WrittenModel {
         this.likes = likes;
     }
 
+    public String getTheme() {
+        return theme;
+    }
 
+    public void setTheme(String theme) {
+        this.theme = theme;
+    }
 }
