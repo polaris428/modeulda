@@ -3,9 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
+        <import type="androidx.databinding.ObservableArrayList"/>
+        <import type="com.example.modeulda.model.WrittenModel"/>
         <variable
             name="theme"
             type="String" />
+        <variable
+            name="item"
+            type="ObservableArrayList" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -42,7 +47,9 @@
             android:id="@+id/recTlist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+            tools:listitem="@layout/row_written"/>
 
 
 

@@ -1,7 +1,7 @@
 package com.example.modeulda.model;
 
 public class WrittenModel {
-    public String title, author, content, time, likes;
+    private String title, author, content, time, likes;
     public WrittenModel(){}
     public WrittenModel(String title, String author, String content, String time, String likes){
         this.title = title;

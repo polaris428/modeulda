@@ -5,6 +5,14 @@ public class UserModel {
     private String email;
     private String pw;
     private String time;
+    public UserModel(){}
+
+    public UserModel(String id, String email, String pw, String time) {
+        this.id = id;
+        this.email = email;
+        this.pw = pw;
+        this.time = time;
+    }
 
     public String getId() {
         return id;
@@ -37,16 +45,4 @@ public class UserModel {
     public void setTime(String time) {
         this.time = time;
     }
-
-
-    public UserModel(){}
-
-    public UserModel(String id, String email, String pw, String time) {
-        this.id = id;
-        this.email = email;
-        this.pw = pw;
-        this.time = time;
-    }
-
-
 }
