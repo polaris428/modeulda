@@ -1,8 +1,10 @@
-package com.example.modeulda;
+package com.example.modeulda.screen.MyActivity;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.example.modeulda.R;
 
 public class SettingActivity extends AppCompatActivity {
 

@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".editprofile"></activity>
+        <activity android:name=".screen.MyActivity.editprofile"></activity>
 
         <uses-library
             android:name="com.google.android.wearable"
@@ -36,7 +36,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SettingActivity" />
+        <activity android:name=".screen.MyActivity.SettingActivity" />
         <activity android:name=".screen.LoginActivity.RegisterActivity" />
         <activity android:name=".screen.LoginActivity.LoginActivity" />
         <activity android:name=".screen.SplashActivity">

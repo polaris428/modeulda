@@ -24,7 +24,6 @@ public class Main1Fragment extends Fragment {
     public static Main1Fragment newInstance() {
         return new Main1Fragment();
     }
-
     private ObservableArrayList<ThemeModel> items = new ObservableArrayList<>();
 
     private Context mContext;
