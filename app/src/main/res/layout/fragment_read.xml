@@ -13,6 +13,9 @@
         <variable
             name="likes"
             type="String" />
+        <variable
+            name="Content"
+            type="String" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -55,8 +58,8 @@
             app:layout_constraintRight_toRightOf="parent">
 
         </TextView>
-       <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewpager"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/OnViewPager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginLeft="50dp"
@@ -66,7 +69,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name"/>
+            app:layout_constraintTop_toBottomOf="@+id/name">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         <ImageButton
             android:id="@+id/hartbutton"
             android:layout_width="35dp"
@@ -78,7 +90,7 @@
             app:layout_constraintHorizontal_bias="0.15"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewpager">
+            app:layout_constraintTop_toBottomOf="@+id/OnViewPager">
 
         </ImageButton>
 
