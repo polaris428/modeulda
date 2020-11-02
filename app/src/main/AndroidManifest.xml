@@ -3,8 +3,7 @@
     package="com.example.modeulda">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
-    <uses-feature android:name="android.hardware.type.watch" /> <!-- <uses-feature android:name="android.hardware.type.watch" /> -->
+ <!-- <uses-feature android:name="android.hardware.type.watch" /> -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -16,7 +15,7 @@
         android:theme="@style/AppTheme">
         <uses-library
             android:name="com.google.android.wearable"
-            android:required="true" />
+            android:required="false" />
 
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
@@ -26,25 +25,9 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
-        <activity
-            android:name=".screen.WritingActivity.WrittingActivity"
-            android:label="@string/title_activity_writting">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
         <activity android:name=".screen.MyActivity.editprofile" />
-        <activity
-            android:name=".screen.WritingActivity.WritingActivity"
-            android:label="@string/title_activity_writing">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".screen.MyActivity.SettingActivity" />
         <activity android:name=".screen.LoginActivity.RegisterActivity" />
         <activity android:name=".screen.LoginActivity.LoginActivity" />
