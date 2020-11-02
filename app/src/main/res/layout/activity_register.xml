@@ -32,263 +32,259 @@
 
     </data>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".screen.LoginActivity.RegisterActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/box1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.LoginActivity.RegisterActivity">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="600dp"
+            android:text="회원가입"
+            android:textColor="#31251b"
+            android:textSize="25sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:background="#ad9688"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line1">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_profile"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/button1"
+                app:layout_constraintVertical_bias="0.4"></ImageView>
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:background="#ad9688"
+                android:text="프로필 사진 수정"
+                android:textColor="#ffffff"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img">
+
+            </Button>
+
+            <TextView
+                android:id="@+id/text2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="아이디"
+                android:textColor="#31251b"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintVertical_bias="0.27">
 
-                <TextView
-                    android:id="@+id/text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="600dp"
-                    android:text="회원가입"
-                    android:textColor="#31251b"
-                    android:textSize="25sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></TextView>
+            </TextView>
 
-                <View
-                    android:id="@+id/line1"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_centerInParent="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="40dp"
-                    android:background="#ad9688"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text" />
+            <EditText
+                android:id="@+id/edtRegiId"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="50dp"
-                    android:layout_marginTop="50dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/line1"
+                android:hint="나선린"
+                android:text="@={id}"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text2">
 
-                    >
+            </EditText>
 
-                    <ImageView
-                        android:id="@+id/img"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:src="@drawable/ic_profile"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"></ImageView>
+            <TextView
+                android:id="@+id/msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:text="@={idError, default=` `}"
+                android:textColor="#cb4444"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtRegiId">
 
-                    <Button
-                        android:id="@+id/button1"
-                        android:layout_width="150dp"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="15dp"
-                        android:background="#ad9688"
-                        android:text="프로필 사진 수정"
-                        android:textColor="#ffffff"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/img">
+            </TextView>
 
-                    </Button>
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="이메일"
+                android:textColor="#31251b"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/msg">
 
-                    <TextView
-                        android:id="@+id/text2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+            </TextView>
 
-                        android:text="아이디"
-                        android:textColor="#31251b"
-                        android:textSize="20sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/button1">
+            <EditText
+                android:id="@+id/edtRegiEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-                    </TextView>
+                android:layout_marginRight="50dp"
+                android:hint=""
+                android:text="@={email}"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text3">
 
-                    <EditText
-                        android:id="@+id/edtRegiId"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
+            </EditText>
 
-                        android:hint="나선린"
-                        android:text="@={id}"
-                        android:textSize="15dp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/text2">
+            <CheckBox
+                android:id="@+id/cboxRegi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이메일 수신동의 "
+                android:textSize="10sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtRegiEmail" />
 
-                    </EditText>
+            <Button
+                android:id="@+id/emilebutton"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:background="#31251b"
+                android:enabled="@{btnen, default=false}"
+                android:text="이메일 확인"
+                android:textColor="#ffff"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cboxRegi">
 
-                    <TextView
-                        android:id="@+id/msg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:text="@={idError, default=` `}"
-                        android:textColor="#cb4444"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/edtRegiId">
+            </Button>
 
-                    </TextView>
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
 
-                    <TextView
-                        android:id="@+id/text3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                android:text="비밀번호"
+                android:textColor="#31251b"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emilebutton">
 
-                        android:text="이메일"
-                        android:textColor="#31251b"
-                        android:textSize="20sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/msg">
+            </TextView>
 
-                    </TextView>
+            <EditText
+                android:id="@+id/edtRegiPw1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-                    <EditText
-                        android:id="@+id/edtRegiEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                android:hint=""
+                android:text="@={pw1}"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text4"></EditText>
 
-                        android:layout_marginRight="50dp"
-                        android:hint=""
-                        android:text="@={email}"
-                        android:textSize="15dp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/text3">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={pw1Error, default=` `}"
+                android:textColor="#cb4444"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtRegiPw1">
 
-                    </EditText>
+            </TextView>
 
-                    <CheckBox
-                        android:id="@+id/cboxRegi"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="이메일 수신동의"
-                        android:textSize="10sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/edtRegiEmail" />
+            <EditText
+                android:id="@+id/edtRegiPw2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-                    <Button
-                        android:id="@+id/emilebutton"
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="20dp"
-                        android:background="#31251b"
-                        android:enabled="@{btnen, default=false}"
-                        android:text="이메일 확인"
-                        android:textColor="#ffff"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cboxRegi">
+                android:layout_marginTop="20dp"
+                android:hint="비밀번호 확인"
+                android:text="@={pw2}"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edtRegiPw1">
 
-                    </Button>
+            </EditText>
 
-                    <TextView
-                        android:id="@+id/text4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+            <TextView
+                android:id="@+id/pswmsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-                        android:text="비밀번호"
-                        android:textColor="#31251b"
-                        android:textSize="20sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/emilebutton">
+                android:text="@={pw2Error, default=` `}"
+                android:textColor="#cb4444"
 
-                    </TextView>
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtRegiPw2">
 
-                    <EditText
-                        android:id="@+id/edtRegiPw1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+            </TextView>
 
-                        android:hint=""
-                        android:text="@={pw1}"
-                        android:textSize="15dp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/text4"></EditText>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        android:text="@={pw1Error, default=` `}"
-                        android:textColor="#cb4444"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/edtRegiPw1">
-
-                    </TextView>
-
-                    <EditText
-                        android:id="@+id/edtRegiPw2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        android:layout_marginTop="20dp"
-                        android:hint="비밀번호 확인"
-                        android:text="@={pw2}"
-                        android:textSize="15dp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/edtRegiPw1">
-
-                    </EditText>
-
-                    <TextView
-                        android:id="@+id/pswmsg"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        android:text="@={pw2Error, default=` `}"
-                        android:textColor="#cb4444"
-
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/edtRegiPw2">
-
-                    </TextView>
-
-                    <Button
-                        android:id="@+id/btnRegiSignup"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="50dp"
-                        android:background="#31251b"
-                        android:text="Login"
-                        android:textColor="#ffffff"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/pswmsg"></Button>
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/btnRegiSignup"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="50dp"
+                android:background="#31251b"
+                android:text="Login"
+                android:textColor="#ffffff"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtRegiPw2"></Button>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
 
 
