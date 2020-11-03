@@ -42,23 +42,24 @@
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="600dp"
             android:text="회원가입"
             android:textColor="#31251b"
             android:textSize="25sp"
+            app:layout_constraintVertical_bias="0.06"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
+        </TextView>
         <View
             android:id="@+id/line1"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="40dp"
             android:background="#ad9688"
+            app:layout_constraintVertical_bias="0.02"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout3"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text" />
@@ -70,31 +71,32 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            app:layout_constraintVertical_bias="0.2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/line1">
+            app:layout_constraintTop_toBottomOf="@+id/line1"
+            app:layout_constraintVertical_bias="0.2">
 
             <ImageView
                 android:id="@+id/img"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:src="@drawable/ic_profile"
+                app:layout_constraintBottom_toBottomOf="@id/button1"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/button1"
                 app:layout_constraintVertical_bias="0.4"></ImageView>
 
             <Button
                 android:id="@+id/button1"
                 android:layout_width="150dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="15dp"
                 android:background="#ad9688"
                 android:text="프로필 사진 수정"
                 android:textColor="#ffffff"
+                app:layout_constraintVertical_bias="0.03"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img">
@@ -108,38 +110,38 @@
                 android:text="아이디"
                 android:textColor="#31251b"
                 android:textSize="20sp"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintVertical_bias="0.27">
+                app:layout_constraintTop_toBottomOf="@+id/button1"
+                app:layout_constraintVertical_bias="0.04">
+
 
             </TextView>
 
             <EditText
                 android:id="@+id/edtRegiId"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-
+                android:layout_height="wrap_content"
                 android:hint="나선린"
                 android:text="@={id}"
                 android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text2">
+                app:layout_constraintTop_toBottomOf="@+id/text2"
+                app:layout_constraintVertical_bias="0.03">
 
             </EditText>
 
             <TextView
                 android:id="@+id/msg"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
+
                 android:text="@={idError, default=` `}"
                 android:textColor="#cb4444"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edtRegiId">
 
             </TextView>
@@ -148,13 +150,14 @@
                 android:id="@+id/text3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:text="이메일"
                 android:textColor="#31251b"
                 android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/msg">
+                app:layout_constraintTop_toBottomOf="@+id/msg"
+                app:layout_constraintVertical_bias="0">
 
             </TextView>
 
@@ -162,14 +165,15 @@
                 android:id="@+id/edtRegiEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:layout_marginRight="50dp"
-                android:hint=""
+                android:hint="EMAIL"
                 android:text="@={email}"
                 android:textSize="15dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text3">
+                app:layout_constraintTop_toBottomOf="@+id/text3"
+                app:layout_constraintVertical_bias="0.05">
 
             </EditText>
 
@@ -185,17 +189,18 @@
             <Button
                 android:id="@+id/emilebutton"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="40dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
                 android:background="#31251b"
                 android:enabled="@{btnen, default=false}"
                 android:text="이메일 확인"
                 android:textColor="#ffff"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cboxRegi">
+                app:layout_constraintTop_toBottomOf="@+id/cboxRegi"
+                app:layout_constraintVertical_bias="0.06">
 
             </Button>
 
@@ -203,14 +208,14 @@
                 android:id="@+id/text4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-
                 android:text="비밀번호"
                 android:textColor="#31251b"
                 android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emilebutton">
+                app:layout_constraintTop_toBottomOf="@+id/emilebutton"
+                app:layout_constraintVertical_bias="0.08">
 
             </TextView>
 
@@ -222,15 +227,21 @@
                 android:hint=""
                 android:text="@={pw1}"
                 android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text4"></EditText>
+                app:layout_constraintTop_toBottomOf="@id/text4"
+                app:layout_constraintVertical_bias="0.03"></EditText>
 
             <TextView
+                android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@={pw1Error, default=` `}"
                 android:textColor="#cb4444"
+                app:layout_constraintVertical_bias="0.04"
+                app:layout_constraintBottom_toBottomOf="parent"
+
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edtRegiPw1">
@@ -241,11 +252,11 @@
                 android:id="@+id/edtRegiPw2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:layout_marginTop="20dp"
                 android:hint="비밀번호 확인"
                 android:text="@={pw2}"
                 android:textSize="15dp"
+                app:layout_constraintVertical_bias="0.2"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edtRegiPw1">
@@ -256,10 +267,9 @@
                 android:id="@+id/pswmsg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:text="@={pw2Error, default=` `}"
                 android:textColor="#cb4444"
-
+                app:layout_constraintBottom_toTopOf="@+id/btnLoginSignin"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edtRegiPw2">
@@ -269,14 +279,18 @@
             <Button
                 android:id="@+id/btnRegiSignup"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="50dp"
+                android:layout_height="45dp"
+                android:textSize="20sp"
                 android:background="#31251b"
-                android:text="Login"
+                android:text="로그인"
                 android:textColor="#ffffff"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtRegiPw2"></Button>
+                app:layout_constraintTop_toBottomOf="@+id/pswmsg"
+                app:layout_constraintVertical_bias="0.1">
+
+            </Button>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
