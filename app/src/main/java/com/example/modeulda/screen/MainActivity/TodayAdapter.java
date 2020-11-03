@@ -1,4 +1,4 @@
-package com.example.modelda.screen.MainActivity;
+package com.example.modeulda.screen.MainActivity;
 
 import android.view.LayoutInflater;
 import android.view.View;
