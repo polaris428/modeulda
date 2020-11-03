@@ -50,7 +50,7 @@
                 <TextView
                     android:id="@+id/box1"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:background="#ad9688"
                     android:text="공개"
                     android:gravity="center"
@@ -142,7 +142,7 @@
                 <TextView
                     android:id="@+id/box4"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:background="#ad9688"
                     android:text="공개"
                     android:gravity="center"
@@ -165,8 +165,12 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     >
                     <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
 
                     </Button>
                 </androidx.constraintlayout.widget.ConstraintLayout>
