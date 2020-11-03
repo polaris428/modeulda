@@ -20,7 +20,7 @@ public class TListFragment extends Fragment {
     private FragmentTListBinding binding;
     private Context mcontext;
     private ObservableArrayList<WrittenModel> items = new ObservableArrayList<>();
-
+    private int showMe;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -39,6 +39,14 @@ public class TListFragment extends Fragment {
         binding.recTlist.setAdapter(adapter);
         adapter.setOnItemClickListener((view, item) -> {
 
+        });
+
+        binding.spiTlistmenu.setOnItemClickListener((adapterView, view, position, id) -> {
+            if (position == 0) {
+                showMe = 0;
+            } else if (position == 1) {
+                showMe = 1;
+            }
         });
         return binding.getRoot();
     }
