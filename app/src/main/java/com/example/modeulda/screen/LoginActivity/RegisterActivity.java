@@ -10,7 +10,6 @@ import androidx.databinding.DataBindingUtil;
 import com.example.modeulda.R;
 import com.example.modeulda.databinding.ActivityRegisterBinding;
 import com.example.modeulda.model.UserModel;
-import com.google.firebase.auth.ActionCodeSettings;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -23,26 +22,27 @@ public class RegisterActivity extends AppCompatActivity {
 
     private ActivityRegisterBinding binding;
 
-    ActionCodeSettings actionCodeSettings =
-            ActionCodeSettings.newBuilder()
-            .setUrl()
-            .setHandleCodeInApp(true)
-            .setAndroidPackageName("com.example.modeulda",
-                    true,
-                    12)
-            .build();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_register);
+
         binding.setEmail("");
         binding.setId("");
         binding.setPw1("");
         binding.setPw2("");
+        //회원가입버튼
         binding.btnRegiSignup.setOnClickListener(view -> {
             register(binding.getId(), binding.getEmail(), binding.getPw1(), binding.getPw2());
         });
+        //이메일 본인인증 활성화
         binding.cboxRegi.setOnClickListener(view -> binding.setBtnen(binding.cboxRegi.isChecked()));
+        //이메일 본인인증 메일 송신 버튼
+        binding.btnRegicer.setOnClickListener(view -> {
+                Certification();
+        });
     }
 
     //토스트들은 나중에 꼭 수정할것
@@ -62,10 +62,10 @@ public class RegisterActivity extends AppCompatActivity {
                 .addOnSuccessListener(runnable -> {
                     firebaseAuth
                             .createUserWithEmailAndPassword(email, pw1)
-                           .addOnSuccessListener(runnable1 -> {
-                               Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show();
-                               finish();
-                           })
+                            .addOnSuccessListener(runnable1 -> {
+                                Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show();
+                                finish();
+                            })
                             .addOnFailureListener(runnable2 -> {
                                 Toast.makeText(this, "실패", Toast.LENGTH_SHORT).show();
                             });
@@ -75,7 +75,17 @@ public class RegisterActivity extends AppCompatActivity {
                 });
 
     }
-
+    private void Certification(){
+        if(firebaseAuth.getCurrentUser() !=null) {
+            firebaseAuth
+                    .getCurrentUser()
+                    .sendEmailVerification()
+                    .addOnSuccessListener(runnable -> Toast.makeText(this, "성공이다 호우", Toast.LENGTH_SHORT).show())
+                    .addOnFailureListener(runnable -> Toast.makeText(this, "시발2", Toast.LENGTH_SHORT).show());
+        }
+        else
+            Toast.makeText(this, "씨잇팔", Toast.LENGTH_SHORT).show();
+    }
     private String getTime() {
         return new SimpleDateFormat("yyyy/MM/dd hh:mm aa", Locale.ENGLISH).format(new Date());
     }

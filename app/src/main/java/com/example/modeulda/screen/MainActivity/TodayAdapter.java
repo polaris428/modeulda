@@ -38,7 +38,10 @@ public class TodayAdapter extends RecyclerView.Adapter<TodayAdapter.TodayHolder>
 
     @Override
     public int getItemCount() {
-        return mItem.size();
+        if(mItem != null)
+          return mItem.size();
+        else
+            return 0;
     }
 
     static class TodayHolder extends RecyclerView.ViewHolder {
