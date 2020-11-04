@@ -4,6 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.modeulda.model.AlertModel;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AlertAdapter extends RecyclerView.Adapter<AlertAdapter.AlertHolder> {
-private List<AlertModel> list = new ArrayList<>();
+    private List<AlertModel> list = new ArrayList<>();
 
     @NonNull
     @Override
@@ -22,6 +23,7 @@ private List<AlertModel> list = new ArrayList<>();
 
     @Override
     public void onBindViewHolder(@NonNull AlertAdapter.AlertHolder holder, int position) {
+        AlertModel model = list.get(position);
 
     }
 
@@ -31,8 +33,15 @@ private List<AlertModel> list = new ArrayList<>();
     }
 
     static class AlertHolder extends RecyclerView.ViewHolder {
+        private ViewDataBinding binding;
+
         public AlertHolder(@NonNull View itemView) {
             super(itemView);
         }
+
+        void bind(AlertModel model){
+            if(binding instanceof )
+        }
+
     }
 }
