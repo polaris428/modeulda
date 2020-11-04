@@ -3,24 +3,6 @@ package com.example.modeulda.model;
 import java.util.List;
 
 public class WrittenModel {
-    private String title;
-    private String author;
-    private String time;
-    private String likes;
-    private String theme;
-    private int pages;
-    private List<String> content;
-
-    public WrittenModel(){}
-
-    public WrittenModel(String title, String author, List<String> content, String time, String likes, String theme){
-        this.title = title;
-        this.author = author;
-        this.content = content;
-        this.time = time;
-        this.likes = likes;
-        this.theme = theme;
-    }
     public String getTitle() {
         return title;
     }
@@ -29,11 +11,11 @@ public class WrittenModel {
         this.title = title;
     }
 
-    public String getAuthor() {
+    public UserModel getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(UserModel author) {
         this.author = author;
     }
 
@@ -45,11 +27,11 @@ public class WrittenModel {
         this.time = time;
     }
 
-    public String getLikes() {
+    public int getLikes() {
         return likes;
     }
 
-    public void setLikes(String likes) {
+    public void setLikes(int likes) {
         this.likes = likes;
     }
 
@@ -60,6 +42,7 @@ public class WrittenModel {
     public void setTheme(String theme) {
         this.theme = theme;
     }
+
     public int getPages() {
         return pages;
     }
@@ -74,5 +57,24 @@ public class WrittenModel {
 
     public void setContent(List<String> content) {
         this.content = content;
+    }
+
+    private String title;
+    private UserModel author;
+    private String time;
+    private int likes;
+    private String theme;
+    private int pages;
+    private List<String> content;
+
+    public WrittenModel(){}
+
+    public WrittenModel(String title, UserModel author, List<String> content, String time, int likes, String theme){
+        this.title = title;
+        this.author = author;
+        this.content = content;
+        this.time = time;
+        this.likes = likes;
+        this.theme = theme;
     }
 }

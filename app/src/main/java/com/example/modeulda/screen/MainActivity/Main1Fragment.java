@@ -1,6 +1,7 @@
 package com.example.modeulda.screen.MainActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.example.modeulda.R;
 import com.example.modeulda.databinding.FragmentMainBinding;
 import com.example.modeulda.model.ThemeModel;
+import com.example.modeulda.screen.WritingActivity.WrittingActivity;
 
 import java.net.Socket;
 
@@ -55,7 +57,9 @@ public class Main1Fragment extends Fragment {
         adapter.setOnItemClickListener((view, item) -> {
 
         });
+        binding.imageView2.setOnClickListener(view -> {
 
+        });
         return binding.getRoot();
     }
 
@@ -74,7 +78,9 @@ public class Main1Fragment extends Fragment {
     private void switchFinF() {
         ((MainActivity) getActivity()).switchFragment(new Main2Fragment());
     }
-
+    private void openActivity(){
+       startActivity(new Intent(((MainActivity) getActivity()), WrittingActivity.class));
+    }
     //서버 관련
 
 //

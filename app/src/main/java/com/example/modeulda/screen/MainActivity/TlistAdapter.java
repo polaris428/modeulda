@@ -1,5 +1,4 @@
 package com.example.modeulda.screen.MainActivity;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import com.example.modeulda.model.WrittenModel;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class TlistAdapter extends RecyclerView.Adapter<TlistAdapter.TlistHolder> {
     private List<WrittenModel> list = new ArrayList<>();
 
@@ -46,7 +44,6 @@ public class TlistAdapter extends RecyclerView.Adapter<TlistAdapter.TlistHolder>
         notifyDataSetChanged();
     }
 
-
     static class TlistHolder extends RecyclerView.ViewHolder {
         private RowWrittenBinding binding;
 
@@ -56,9 +53,9 @@ public class TlistAdapter extends RecyclerView.Adapter<TlistAdapter.TlistHolder>
         }
 
         void bind(WrittenModel model, OnItemClickListener onClickListener) {
-            binding.setId(model.getAuthor());
+            binding.setId(model.getAuthor().getId());
             binding.setContent(model.getContent().get(0));
-            binding.setLikes(model.getLikes());
+            binding.setLikes(String.valueOf(model.getLikes()));
             binding.setTimeAgo(model.getTime());
             binding.setTitle(model.getTitle());
             itemView.setOnClickListener(view -> onClickListener.onItemClick(view, model));

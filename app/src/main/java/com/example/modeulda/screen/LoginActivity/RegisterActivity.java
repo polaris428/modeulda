@@ -87,6 +87,8 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "씨잇팔", Toast.LENGTH_SHORT).show();
     }
     private String getTime() {
-        return new SimpleDateFormat("yyyy/MM/dd hh:mm aa", Locale.ENGLISH).format(new Date());
+        return new SimpleDateFormat("MM/dd/yyyy hh:mm:ss", Locale.ENGLISH).format(new Date());
     }
+    //08/18/2018 07:22:16
+   // yyyy/MM/dd hh:mm aa
 }
