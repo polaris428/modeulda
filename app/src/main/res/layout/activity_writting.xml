@@ -109,13 +109,7 @@
 
             >
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:background="@null"
-                android:gravity="top"
-                android:hint="글을 입력해주세요">
+
 
             </EditText>
 
@@ -126,11 +120,11 @@
 
                 android:orientation="vertical">
 
-                <LinearLayout
+
+                <androidx.viewpager2.widget.ViewPager2
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    />
+                    android:layout_weight="1"/>
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
