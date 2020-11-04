@@ -187,13 +187,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/edtRegiEmail" />
 
             <Button
-                android:id="@+id/emilebutton"
+                android:id="@+id/btnRegicer"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginRight="35dp"
                 android:background="#31251b"
-                android:enabled="@{btnen, default=false}"
+                android:enabled="@{btnen, default=`false`}"
                 android:text="이메일 확인"
                 android:textColor="#ffff"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -214,7 +214,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emilebutton"
+                app:layout_constraintTop_toBottomOf="@+id/btnRegicer"
                 app:layout_constraintVertical_bias="0.08">
 
             </TextView>

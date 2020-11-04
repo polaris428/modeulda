@@ -2,9 +2,6 @@ package com.example.modeulda.screen.LoginActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -64,9 +61,9 @@ public class LoginActivity extends AppCompatActivity {
                                 finish();
                             })
                             .addOnFailureListener(runnable -> {
-                                Toast.makeText(this, "실패다 이년아", Toast.LENGTH_SHORT).show();
+                                binding.setErrorMsg("로그인 실패");
                             });
                 })
-                .addOnFailureListener(e -> Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show());
+                .addOnFailureListener(e ->  binding.setErrorMsg("로그인 실패"));
     }
 }

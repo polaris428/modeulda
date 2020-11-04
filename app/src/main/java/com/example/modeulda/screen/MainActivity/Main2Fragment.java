@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -44,13 +45,27 @@ public class Main2Fragment extends Fragment {
 
         binding.txtMain2to1.setOnClickListener(view -> switchFinF());
 
-        binding.spiMain2menu.setOnItemClickListener((adapterView, view, position, id) -> {
-            if (position == 0) {
-                showMe = 0;
-            } else if (position == 1) {
-                showMe = 1;
+        binding.spiMain2menu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                if (position == 0) {
+                    showMe = 0;
+                } else if (position == 1) {
+                    showMe = 1;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
+
+
+
+
+
+
         return binding.getRoot();
     }
 
