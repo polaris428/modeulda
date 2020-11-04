@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.modeulda.R;
 import com.example.modeulda.model.AlertModel;
 
 import java.util.ArrayList;

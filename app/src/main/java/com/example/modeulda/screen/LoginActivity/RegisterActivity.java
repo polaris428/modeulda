@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil;
 import com.example.modeulda.R;
 import com.example.modeulda.databinding.ActivityRegisterBinding;
 import com.example.modeulda.model.UserModel;
+import com.google.firebase.auth.ActionCodeSettings;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -22,6 +23,14 @@ public class RegisterActivity extends AppCompatActivity {
 
     private ActivityRegisterBinding binding;
 
+    ActionCodeSettings actionCodeSettings =
+            ActionCodeSettings.newBuilder()
+            .setUrl()
+            .setHandleCodeInApp(true)
+            .setAndroidPackageName("com.example.modeulda",
+                    true,
+                    12)
+            .build();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
