@@ -12,7 +12,6 @@ import androidx.databinding.ObservableArrayList;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.modelda.screen.MainActivity.TodayAdapter;
 import com.example.modeulda.R;
 import com.example.modeulda.databinding.FragmentMain2Binding;
 import com.example.modeulda.model.WrittenModel;
@@ -22,6 +21,7 @@ public class Main2Fragment extends Fragment {
     private ObservableArrayList<WrittenModel> items = new ObservableArrayList<>();
     private FragmentMain2Binding binding;
     private Context mContext;
+    private int showMe;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -36,18 +36,26 @@ public class Main2Fragment extends Fragment {
         binding.setItems(items);
 
         binding.recMain2content.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
-        com.example.modelda.screen.MainActivity.TodayAdapter todayAdapter = new TodayAdapter();
+        TodayAdapter todayAdapter = new TodayAdapter();
         binding.recMain2content.setAdapter(todayAdapter);
         todayAdapter.setOnItemClickListener((view, item) -> {
 
         });
+
         binding.txtMain2to1.setOnClickListener(view -> switchFinF());
+
+        binding.spiMain2menu.setOnItemClickListener((adapterView, view, position, id) -> {
+            if (position == 0) {
+                showMe = 0;
+            } else if (position == 1) {
+                showMe = 1;
+            }
+        });
         return binding.getRoot();
     }
+
 
     private void switchFinF() {
         ((MainActivity) getActivity()).switchFragment(new Main1Fragment());
     }
-
-
 }
