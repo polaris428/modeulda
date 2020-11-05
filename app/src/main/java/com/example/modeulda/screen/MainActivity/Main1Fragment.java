@@ -26,6 +26,7 @@ public class Main1Fragment extends Fragment {
     public static Main1Fragment newInstance() {
         return new Main1Fragment();
     }
+
     private ObservableArrayList<ThemeModel> items = new ObservableArrayList<>();
 
     private Context mContext;
@@ -71,16 +72,19 @@ public class Main1Fragment extends Fragment {
 
     private void getThemes() {
         items.clear();
-
     }
 
     //오늘의 주제로 넘어가기
     private void switchFinF() {
         ((MainActivity) getActivity()).switchFragment(new Main2Fragment());
     }
-    private void openActivity(){
-       startActivity(new Intent(((MainActivity) getActivity()), WrittingActivity.class));
+
+    private void openActivity() {
+        startActivity(new Intent(((MainActivity) getActivity()), WrittingActivity.class));
     }
+
+
+
     //서버 관련
 
 //

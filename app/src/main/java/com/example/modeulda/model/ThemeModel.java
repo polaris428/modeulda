@@ -1,6 +1,8 @@
 package com.example.modeulda.model;
 
-public class ThemeModel {
+import com.example.modeulda.serverFiles.Packet;
+
+public class ThemeModel extends Packet {
     private String InRE;
     private String InTop;
 
@@ -8,6 +10,7 @@ public ThemeModel(){}
 public ThemeModel(String theme){
     this.InRE= theme;
     this.InTop= theme;
+    PacketType = com.example.modeulda.serverFiles.PacketType.ThemeModel;
 }
     public String getInRE() {
         return InRE;

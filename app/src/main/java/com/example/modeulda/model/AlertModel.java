@@ -1,6 +1,8 @@
 package com.example.modeulda.model;
 
-public class AlertModel {
+import com.example.modeulda.serverFiles.Packet;
+
+public class AlertModel extends Packet {
 
     private String who;
     private int type;
@@ -11,6 +13,7 @@ public class AlertModel {
     public AlertModel(String who, int type) {
         this.who = who;
         this.type = type;
+        PacketType = com.example.modeulda.serverFiles.PacketType.AlertModel;
     }
     //type0: 글을 올렸습니다
     //type1: 좋아요를 누르셨습니다

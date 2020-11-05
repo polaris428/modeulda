@@ -1,6 +1,6 @@
-package com.example.modeulda.serverFiles;
+package com.example.modeulda.model;
 
-import com.example.modeulda.model.WrittenModel;
+import com.example.modeulda.serverFiles.Packet;
 
 public class Written extends Packet {
     public Written Written;

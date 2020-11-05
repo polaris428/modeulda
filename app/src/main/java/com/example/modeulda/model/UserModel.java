@@ -1,6 +1,8 @@
 package com.example.modeulda.model;
 
-public class UserModel {
+import com.example.modeulda.serverFiles.Packet;
+
+public class UserModel extends Packet {
     private String id;
     private String email;
     private String pw;
@@ -12,6 +14,7 @@ public class UserModel {
         this.email = email;
         this.pw = pw;
         this.time = time;
+        PacketType = com.example.modeulda.serverFiles.PacketType.UserModel;
     }
 
     public String getId() {

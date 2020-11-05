@@ -3,7 +3,23 @@ package com.example.modeulda.serverFiles;
 public enum PacketType {
     ClientConnected,
     ClientDisConnect,
-    LinkInfo,
-    Written
-
+    ClientDisConnected,
+    UploadDocument,
+    RemoveDocument,
+    UploadPrivateDocument,
+    RemovePrivateDocument,
+    Like,
+    Unlike,
+    Follow,
+    UnFollow,
+    ReqPageData,
+    PageData,
+    ReqPrivatePageData,
+    PrivatePageData,
+    ReqDoc,
+    ReqThemes,
+    StreamHeader
 }
+
+
+

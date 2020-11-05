@@ -1,8 +1,10 @@
 package com.example.modeulda.model;
 
+import com.example.modeulda.serverFiles.Packet;
+
 import java.util.List;
 
-public class WrittenModel {
+public class WrittenModel extends Packet {
     public String getTitle() {
         return title;
     }
@@ -43,14 +45,6 @@ public class WrittenModel {
         this.theme = theme;
     }
 
-    public int getPages() {
-        return pages;
-    }
-
-    public void setPages(int pages) {
-        this.pages = pages;
-    }
-
     public List<String> getContent() {
         return content;
     }
@@ -64,7 +58,7 @@ public class WrittenModel {
     private String time;
     private int likes;
     private String theme;
-    private int pages;
+
     private List<String> content;
 
     public WrittenModel(){}
@@ -76,5 +70,6 @@ public class WrittenModel {
         this.time = time;
         this.likes = likes;
         this.theme = theme;
+        PacketType = com.example.modeulda.serverFiles.PacketType.WrittenModel;
     }
 }

@@ -1,16 +1,16 @@
 package com.example.modeulda.serverFiles;
 
+import com.example.modeulda.model.UserModelForS;
+
 class ClientConnected extends Packet {
-//    public ChatClient ChatClient;
-//    public GPSdata GPSdata;
-//
-//    public ClientConnected() {
-//        PacketType = PacketType.ClientConnected;
-//    }
-//
-//    public ClientConnected(ChatClient chatClient, GPSdata gPSdata){
-//        this();
-//        ChatClient = chatClient;
-//        GPSdata = gPSdata;
-//    }
+    public UserModelForS ums;
+
+    public ClientConnected() {
+        PacketType = com.example.modeulda.serverFiles.PacketType.ClientConnected;
+    }
+
+    public ClientConnected(UserModelForS ums){
+        this();
+        this.ums = ums;
+    }
 }
