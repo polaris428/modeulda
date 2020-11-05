@@ -1,6 +1,6 @@
 package com.example.modeulda.serverFiles;
 
-class LinkInfo extends Packet {
+public class LinkInfo extends Packet {
     public int LinkedClients;
     public int SearchRange;
 
