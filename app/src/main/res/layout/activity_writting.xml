@@ -128,13 +128,14 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:background="#31251b">
+                    android:background="#fffff"
+                    >
                     <Button
                         android:id="@+id/btn1"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="40dp"
+                        android:background="@drawable/ic__a"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
@@ -143,19 +144,24 @@
                         android:id="@+id/btn2"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:text="T"
+                        android:background="#00FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toRightOf="@+id/btn1"
                         app:layout_constraintTop_toTopOf="parent">
 
                     </Button>
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/btn3"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:src="@drawable/ic_b"
+                        android:background="#02FFFFFF"
                         app:layout_constraintLeft_toRightOf="@+id/btn2"
                         app:layout_constraintTop_toTopOf="parent">
 
-                    </Button>
+                    </ImageButton>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
