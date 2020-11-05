@@ -22,4 +22,10 @@
         android:font="@font/applesdgothicneo_m">
 
     </font>
+    <font
+        android:font="@font/loding">
+
+    </font>
+
+
 </font-family>

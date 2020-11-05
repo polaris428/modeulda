@@ -95,6 +95,7 @@
             />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginLeft="30dp"
@@ -109,6 +110,7 @@
 
             >
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
@@ -116,52 +118,81 @@
             <LinearLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view"
                 android:orientation="vertical">
 
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"/>
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-                    <Button
-                        android:id="@+id/btn1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="40dp"
-                        android:background="@drawable/ic__a"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                    android:layout_height="wrap_content">
 
-                    </Button>
-                    <Button
-                        android:id="@+id/btn2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="T"
-                        android:background="#00FFFFFF"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toRightOf="@+id/btn1"
-                        app:layout_constraintTop_toTopOf="parent">
 
-                    </Button>
 
                     <ImageButton
-                        android:id="@+id/btn3"
+                        android:id="@+id/btns"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_b"
-                        android:background="#02FFFFFF"
-                        app:layout_constraintLeft_toRightOf="@+id/btn2"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic__btn2"
+                        android:background="#00FFFFFF"
+                        app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
                     </ImageButton>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/bar"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/btns"
 
+                        android:background="#ad9688">
+                        <ImageButton
+                            android:id="@+id/btn1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:src="@drawable/ic_b"
+                            android:background="#00FFFFFF"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </ImageButton>
+                        <ImageButton
+                            android:id="@+id/btn2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic__a"
+                            android:background="#02FFFFFF"
+                            android:layout_marginLeft="20dp"
+                            app:layout_constraintLeft_toRightOf="@+id/btn1"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </ImageButton>
+
+                        <Button
+                            android:id="@+id/btn3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#02FFFFFF"
+                            android:text="T"
+                            android:layout_marginLeft="20dp"
+                            app:layout_constraintLeft_toRightOf="@+id/btn2"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </Button>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -169,6 +200,6 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </layout>
