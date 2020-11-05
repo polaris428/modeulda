@@ -1,0 +1,170 @@
+Index: app/src/main/res/layout/fragment_search.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<layout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\">\r\n    <androidx.constraintlayout.widget.ConstraintLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\">\r\n        <View\r\n            android:id=\"@+id/line1\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"4dp\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:background=\"#ad9688\"\r\n            android:layout_marginTop=\"40dp\"\r\n            android:layout_marginLeft=\"80dp\"\r\n            app:layout_constraintLeft_toLeftOf=\"parent\"\r\n            app:layout_constraintRight_toRightOf=\"parent\"\r\n            app:layout_constraintTop_toTopOf=\"parent\"\r\n\r\n            >\r\n\r\n        </View>\r\n        <Button\r\n            android:id=\"@+id/btn1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"0dp\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/line1\"\r\n            app:layout_constraintBottom_toTopOf=\"@+id/line2\"\r\n            app:layout_constraintRight_toRightOf=\"parent\">\r\n\r\n        </Button>\r\n        <EditText\r\n            android:layout_width=\"0dp\"\r\n            android:layout_height=\"0dp\"\r\n            android:layout_marginLeft=\"20dp\"\r\n            android:background=\"\"\r\n            app:layout_constraintRight_toLeftOf=\"@+id/btn1\"\r\n            app:layout_constraintLeft_toLeftOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/line1\"\r\n            app:layout_constraintBottom_toTopOf=\"@+id/line2\"\r\n            >\r\n\r\n        </EditText>\r\n        <View\r\n            android:id=\"@+id/line2\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"4dp\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:background=\"#ad9688\"\r\n            android:layout_marginTop=\"60dp\"\r\n            android:layout_marginRight=\"80dp\"\r\n            app:layout_constraintLeft_toLeftOf=\"parent\"\r\n            app:layout_constraintRight_toRightOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/line1\">\r\n\r\n        </View>\r\n        <FrameLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"0dp\"\r\n            app:layout_constraintBottom_toBottomOf=\"parent\"\r\n            app:layout_constraintLeft_toLeftOf=\"parent\"\r\n            app:layout_constraintRight_toRightOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/line2\">\r\n\r\n        </FrameLayout>\r\n    </androidx.constraintlayout.widget.ConstraintLayout>\r\n</layout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_search.xml	(revision 7974af4da500dae180bedb92bde583f613d276e5)
++++ app/src/main/res/layout/fragment_search.xml	(date 1604587165844)
+@@ -23,21 +23,22 @@
+         <Button
+             android:id="@+id/btn1"
+             android:layout_width="wrap_content"
+-            android:layout_height="0dp"
++            android:layout_height="wrap_content"
++            android:background="@drawable/ic__search"
+             app:layout_constraintTop_toBottomOf="@+id/line1"
+             app:layout_constraintBottom_toTopOf="@+id/line2"
+-            app:layout_constraintRight_toRightOf="parent">
++            app:layout_constraintLeft_toLeftOf="parent">
+ 
+         </Button>
+         <EditText
+             android:layout_width="0dp"
+             android:layout_height="0dp"
+-            android:layout_marginLeft="20dp"
+-            android:background=""
+-            app:layout_constraintRight_toLeftOf="@+id/btn1"
+-            app:layout_constraintLeft_toLeftOf="parent"
++            android:background="#ffffff"
++            app:layout_constraintLeft_toRightOf="@+id/btn1"
++            app:layout_constraintRight_toRightOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/line1"
+             app:layout_constraintBottom_toTopOf="@+id/line2"
++
+             >
+ 
+         </EditText>
+@@ -47,20 +48,66 @@
+             android:layout_height="4dp"
+             android:layout_centerInParent="true"
+             android:background="#ad9688"
+-            android:layout_marginTop="60dp"
++            android:layout_marginTop="40dp"
+             android:layout_marginRight="80dp"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintRight_toRightOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/line1">
+ 
+         </View>
++        <androidx.constraintlayout.widget.ConstraintLayout
++            android:layout_width="match_parent"
++            android:layout_height="0dp"
++            android:background="#f3ebe3"
++            android:layout_marginTop="100dp"
++            android:layout_marginLeft="70dp"
++            android:layout_marginRight="70dp"
++            app:layout_constraintTop_toBottomOf="@+id/line2"
++            app:layout_constraintLeft_toLeftOf="parent"
++            app:layout_constraintRight_toRightOf="parent"
++            android:visibility="gone"
++
++            >
++
++
++            <TextView
++                android:id="@+id/text"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:gravity="center"
++                android:text="검색한 결과가 없습니다"
++                android:textSize="25sp"
++                android:textColor="#31251b"
++                android:fontFamily="@font/applesdgothicneo_b"
++                app:layout_constraintLeft_toLeftOf="parent"
++                app:layout_constraintRight_toRightOf="parent"
++                app:layout_constraintTop_toTopOf="parent"
++                >
++
++            </TextView>
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="검색한 결과가 맞는지 확인 하세요"
++                android:textSize="20sp"
++                android:textColor="#31251b"
++                android:layout_marginTop="20dp"
++                app:layout_constraintTop_toBottomOf="@+id/text"
++                app:layout_constraintLeft_toLeftOf="parent"
++                app:layout_constraintRight_toRightOf="parent">
++
++            </TextView>
++        </androidx.constraintlayout.widget.ConstraintLayout>
++
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="0dp"
+             app:layout_constraintBottom_toBottomOf="parent"
++            app:layout_constraintHorizontal_bias="0.0"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintRight_toRightOf="parent"
+-            app:layout_constraintTop_toBottomOf="@+id/line2">
++            app:layout_constraintTop_toBottomOf="@+id/line2"
++            app:layout_constraintVertical_bias="0.0">
+ 
+         </FrameLayout>
+     </androidx.constraintlayout.widget.ConstraintLayout>
+Index: app/src/main/res/layout/activity_writting.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<layout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\">\r\n<data>\r\n    <variable\r\n        name=\"title\"\r\n        type=\"String\" />\r\n\r\n</data>\r\n    <androidx.constraintlayout.widget.ConstraintLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/subject\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"20dp\"\r\n            android:fontFamily=\"@font/applesdgothicneo_b\"\r\n            android:text=\"주제\"\r\n            android:textColor=\"#31251b\"\r\n            android:textSize=\"20sp\"\r\n            app:layout_constraintLeft_toLeftOf=\"parent\"\r\n            app:layout_constraintRight_toRightOf=\"parent\"\r\n            app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n        </TextView>\r\n\r\n        <ImageButton\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginLeft=\"50dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:background=\"@drawable/ic__save\"\r\n            app:layout_constraintLeft_toLeftOf=\"@+id/subject\"\r\n            app:layout_constraintRight_toRightOf=\"parent\"\r\n            app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n        </ImageButton>\r\n\r\n        <ImageButton\r\n            android:id=\"@+id/imageButton\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"20sp\"\r\n            android:layout_marginRight=\"100dp\"\r\n            android:background=\"@drawable/ic_back\"\r\n            app:layout_constraintLeft_toLeftOf=\"parent\"\r\n            app:layout_constraintRight_toLeftOf=\"@+id/subject\"\r\n            app:layout_constraintTop_toTopOf=\"parent\"\r\n\r\n            >\r\n\r\n        </ImageButton>\r\n\r\n        <View\r\n            android:id=\"@+id/line\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"5dp\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:layout_marginTop=\"70dp\"\r\n            android:layout_marginRight=\"100dp\"\r\n            android:background=\"#ad9688\"\r\n            app:layout_constraintRight_toRightOf=\"parent\"\r\n            app:layout_constraintTop_toTopOf=\"parent\"\r\n\r\n            />\r\n\r\n        <EditText\r\n            android:id=\"@+id/title\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_margin=\"10dp\"\r\n            android:background=\"@null\"\r\n            android:hint=\"제목\"\r\n            android:textSize=\"20sp\"\r\n            app:layout_constraintLeft_toLeftOf=\"parent\"\r\n            app:layout_constraintRight_toRightOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/line\">\r\n\r\n        </EditText>\r\n\r\n        <View\r\n            android:id=\"@+id/line2\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"5dp\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:layout_marginLeft=\"100dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:background=\"#ad9688\"\r\n            app:layout_constraintLeft_toLeftOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/title\"\r\n\r\n            />\r\n\r\n        <androidx.constraintlayout.widget.ConstraintLayout\r\n            android:layout_width=\"0dp\"\r\n            android:layout_height=\"0dp\"\r\n            android:layout_marginLeft=\"30dp\"\r\n            android:layout_marginTop=\"40dp\"\r\n            android:layout_marginRight=\"30dp\"\r\n            android:layout_marginBottom=\"110dp\"\r\n            android:background=\"@drawable/ic__15\"\r\n            app:layout_constraintBottom_toBottomOf=\"parent\"\r\n            app:layout_constraintLeft_toLeftOf=\"parent\"\r\n            app:layout_constraintRight_toRightOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/line2\"\r\n\r\n            >\r\n\r\n\r\n\r\n            </EditText>\r\n\r\n            <LinearLayout\r\n                xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"match_parent\"\r\n\r\n                android:orientation=\"vertical\">\r\n\r\n\r\n                <androidx.viewpager2.widget.ViewPager2\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"match_parent\"\r\n                    android:layout_weight=\"1\"/>\r\n                <androidx.constraintlayout.widget.ConstraintLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:background=\"#fffff\"\r\n                    >\r\n                    <Button\r\n                        android:id=\"@+id/btn1\"\r\n                        android:layout_width=\"wrap_content\"\r\n                        android:layout_height=\"match_parent\"\r\n                        android:layout_marginLeft=\"40dp\"\r\n                        android:background=\"@drawable/ic__a\"\r\n                        app:layout_constraintLeft_toLeftOf=\"parent\"\r\n                        app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n                    </Button>\r\n                    <Button\r\n                        android:id=\"@+id/btn2\"\r\n                        android:layout_width=\"wrap_content\"\r\n                        android:layout_height=\"match_parent\"\r\n                        android:text=\"T\"\r\n                        android:background=\"#00FFFFFF\"\r\n                        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n                        app:layout_constraintLeft_toRightOf=\"@+id/btn1\"\r\n                        app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n                    </Button>\r\n\r\n                    <ImageButton\r\n                        android:id=\"@+id/btn3\"\r\n                        android:layout_width=\"wrap_content\"\r\n                        android:layout_height=\"match_parent\"\r\n                        android:src=\"@drawable/ic_b\"\r\n                        android:background=\"#02FFFFFF\"\r\n                        app:layout_constraintLeft_toRightOf=\"@+id/btn2\"\r\n                        app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n                    </ImageButton>\r\n\r\n                </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n\r\n            </LinearLayout>\r\n\r\n\r\n        </androidx.constraintlayout.widget.ConstraintLayout>\r\n    </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n</layout>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_writting.xml	(revision 7974af4da500dae180bedb92bde583f613d276e5)
++++ app/src/main/res/layout/activity_writting.xml	(date 1604585746447)
+@@ -105,22 +105,18 @@
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintRight_toRightOf="parent"
+-            app:layout_constraintTop_toBottomOf="@+id/line2"
++            app:layout_constraintTop_toBottomOf="@+id/line2">
+ 
+-            >
+ 
+ 
+ 
+-            </EditText>
+ 
+             <LinearLayout
+                 xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+-
+                 android:orientation="vertical">
+ 
+-
+                 <androidx.viewpager2.widget.ViewPager2
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+@@ -128,8 +124,7 @@
+                 <androidx.constraintlayout.widget.ConstraintLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+-                    android:background="#fffff"
+-                    >
++                    android:background="#ad9688">
+                     <Button
+                         android:id="@+id/btn1"
+                         android:layout_width="wrap_content"
+Index: app/src/main/res/drawable/ic__search.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable/ic__search.xml	(date 1604586194294)
++++ app/src/main/res/drawable/ic__search.xml	(date 1604586194294)
+@@ -0,0 +1,12 @@
++<vector android:height="19dp" android:viewportHeight="61.692"
++    android:viewportWidth="60.847" android:width="19dp" xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="#00000000"
++        android:pathData="M24,24m-24,0a24,24 0,1 1,48 0a24,24 0,1 1,-48 0"
++        android:strokeColor="#31251b" android:strokeWidth="6"/>
++    <path android:fillColor="#00000000"
++        android:pathData="M24,24m-21,0a21,21 0,1 1,42 0a21,21 0,1 1,-42 0"
++        android:strokeColor="#31251b" android:strokeWidth="6"/>
++    <path android:fillColor="#00000000"
++        android:pathData="M39.871,40.715l8.249,8.249 10.606,10.606z"
++        android:strokeColor="#31251b" android:strokeWidth="6"/>
++</vector>
