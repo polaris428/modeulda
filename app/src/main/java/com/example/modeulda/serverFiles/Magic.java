@@ -4,9 +4,11 @@ import com.google.firebase.firestore.auth.User;
 
 import org.w3c.dom.Document;
 
+import java.util.List;
+
 
 public class Magic {
-
+   public List<String> ThemesList;
     public Boolean TryAddDoc(Document doc){
         return true;
     }
@@ -51,5 +53,8 @@ public class Magic {
     }
     public void  GetPrivateDocThumb(String UserId, int startIndex, int count){}
     public void GetTheme(){
+
     }
+
+
 }
