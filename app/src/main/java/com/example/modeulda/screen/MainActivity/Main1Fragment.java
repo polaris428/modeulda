@@ -40,6 +40,7 @@ public class Main1Fragment extends Fragment {
     public static Main1Fragment newInstance() {
         return new Main1Fragment();
     }
+    TListFragment tListFragment;
 
     private ObservableArrayList<ThemeModel> items = new ObservableArrayList<>();
 
@@ -70,7 +71,8 @@ public class Main1Fragment extends Fragment {
         binding.recMain1Theme.setAdapter(adapter);
 
         adapter.setOnItemClickListener((view, item) -> {
-
+            ((MainActivity) getActivity()).switchFragment(tListFragment);
+            tListFragment.setTheme(item.getInTop());
         });
         binding.imageView2.setOnClickListener(view -> {
 
