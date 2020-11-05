@@ -24,7 +24,7 @@
 
 
         <TextView
-            android:id="@+id/txtMain1to1"
+            android:id="@+id/txtMain2to1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="90dp"
@@ -38,7 +38,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txtMain2to1"
+            android:id="@+id/txtMain2to2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -48,7 +48,7 @@
             android:textColor="#31251B"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/txtMain1to1"
+            app:layout_constraintLeft_toRightOf="@+id/txtMain2to1"
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
@@ -61,7 +61,7 @@
 
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtMain1to1" />
+            app:layout_constraintTop_toBottomOf="@+id/txtMain2to1" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/Main2Content"

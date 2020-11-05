@@ -72,6 +72,7 @@ public class Main1Fragment extends Fragment {
 
     private void getThemes() {
         items.clear();
+
     }
 
     //오늘의 주제로 넘어가기

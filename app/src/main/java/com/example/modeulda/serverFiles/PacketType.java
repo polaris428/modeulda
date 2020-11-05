@@ -18,7 +18,15 @@ public enum PacketType {
     PrivatePageData,
     ReqDoc,
     ReqThemes,
-    StreamHeader
+    StreamHeader,
+    AlertModel,
+ThemeModel,
+    Thumbnail,
+    UserModel,
+    UserModelForS,
+    Written,
+    WrittenModel,
+    LinkInfo
 }
 
 

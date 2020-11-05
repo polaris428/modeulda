@@ -13,7 +13,7 @@ public class AlertModel extends Packet {
     public AlertModel(String who, int type) {
         this.who = who;
         this.type = type;
-        PacketType = com.example.modeulda.serverFiles.PacketType.AlertModel;
+       PacketType = PacketType.AlertModel;
     }
     //type0: 글을 올렸습니다
     //type1: 좋아요를 누르셨습니다
