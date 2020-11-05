@@ -7,17 +7,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.modeulda.databinding.RowWrittenBinding;
-import com.example.modeulda.model.WrittenModel;
+import com.example.modeulda.model.Thumbnail;
 
 import java.util.ArrayList;
 import java.util.List;
 public class TlistAdapter extends RecyclerView.Adapter<TlistAdapter.TlistHolder> {
-    private List<WrittenModel> list = new ArrayList<>();
+    private List<Thumbnail> list = new ArrayList<>();
 
     private OnItemClickListener onItemClickListener;
 
     public interface OnItemClickListener {
-        void onItemClick(View view, WrittenModel item);
+        void onItemClick(View view, Thumbnail item);
     }
     public void setOnItemClickListener(TlistAdapter.OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
@@ -30,7 +30,7 @@ public class TlistAdapter extends RecyclerView.Adapter<TlistAdapter.TlistHolder>
     }
 
     public void onBindViewHolder(TlistHolder holder, int position) {
-        WrittenModel model = list.get(position);
+        Thumbnail model = list.get(position);
         holder.bind(model, onItemClickListener);
     }
 
@@ -39,7 +39,7 @@ public class TlistAdapter extends RecyclerView.Adapter<TlistAdapter.TlistHolder>
         return list.size();
     }
 
-    void setItem(List<WrittenModel> list) {
+    void setItem(List<Thumbnail> list) {
         this.list = list;
         notifyDataSetChanged();
     }
@@ -52,12 +52,11 @@ public class TlistAdapter extends RecyclerView.Adapter<TlistAdapter.TlistHolder>
             this.binding = binding;
         }
 
-        void bind(WrittenModel model, OnItemClickListener onClickListener) {
-            binding.setId(model.getAuthor().getId());
-            binding.setContent(model.getContent().get(0));
+        void bind(Thumbnail model, OnItemClickListener onClickListener) {
+            binding.setId(model.getAuthor());
+            binding.setContent(model.getThumb());
             binding.setLikes(String.valueOf(model.getLikes()));
             binding.setTimeAgo(model.getTime());
-            binding.setTitle(model.getTitle());
             itemView.setOnClickListener(view -> onClickListener.onItemClick(view, model));
         }
     }

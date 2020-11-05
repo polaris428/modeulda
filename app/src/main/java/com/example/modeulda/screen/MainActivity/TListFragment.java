@@ -16,8 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.example.modeulda.R;
 import com.example.modeulda.Util.UserCache;
 import com.example.modeulda.databinding.FragmentTListBinding;
+import com.example.modeulda.model.Thumbnail;
 import com.example.modeulda.model.UserModelForS;
-import com.example.modeulda.model.WrittenModel;
 import com.example.modeulda.serverFiles.ClientConnected;
 import com.example.modeulda.serverFiles.LinkInfo;
 import com.example.modeulda.serverFiles.Packet;
@@ -34,7 +34,7 @@ import java.nio.charset.StandardCharsets;
 public class TListFragment extends Fragment {
     private FragmentTListBinding binding;
     private Context mContext;
-    private ObservableArrayList<WrittenModel> items = new ObservableArrayList<>();
+    private ObservableArrayList<Thumbnail> items = new ObservableArrayList<>();
     private int showMe;
     private Socket socket;
     @Override
@@ -70,7 +70,9 @@ public class TListFragment extends Fragment {
     public void setTheme(String theme){
         binding.setTheme(theme);
     }
-
+    public void setItems(ObservableArrayList<Thumbnail> items){
+        this.items.addAll(items);
+    }
 
     //주제 불러오기
     public void onResume() {
@@ -99,12 +101,16 @@ public class TListFragment extends Fragment {
                     LinkInfo linkInfo = (LinkInfo) gson.fromJson(string, LinkInfo.class);
                     break;
                 case Thumbnail:
-
+//                    ObservableArrayList<Thumbnail> list =
+//                            new ObservableArrayList<Thumbnail>((ObservableArrayList<Thumbnail>gson
+//                                    .fromJson(string,  new ObservableArrayList<Thumbnail>())));
+//                    this.setItems(list);
 
             }
         });
     }
-
+//    ThemeModel themeModel = (ThemeModel) gson.fromJson(string, ThemeModel.class);
+//                    fMain1.setThemes(themeModel);
 
     //json으로
     public <T> String ObjectToJson(T object) {
