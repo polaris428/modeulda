@@ -20,13 +20,15 @@ public enum PacketType {
     ReqThemes,
     StreamHeader,
     AlertModel,
-ThemeModel,
+    ThemeModel,
     Thumbnail,
     UserModel,
     UserModelForS,
     Written,
     WrittenModel,
-    LinkInfo
+    LinkInfo,
+    PDoc,
+    Themes
 }
 
 
