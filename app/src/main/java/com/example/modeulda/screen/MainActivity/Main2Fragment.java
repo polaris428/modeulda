@@ -22,7 +22,6 @@ import com.example.modeulda.model.DocOrder;
 import com.example.modeulda.model.ReqPageData;
 import com.example.modeulda.model.Thumbnail;
 import com.example.modeulda.model.UserModelForS;
-import com.example.modeulda.model.WrittenModel;
 import com.example.modeulda.serverFiles.ClientConnected;
 import com.example.modeulda.serverFiles.Packet;
 import com.google.gson.Gson;
@@ -38,7 +37,7 @@ import java.util.List;
 
 public class Main2Fragment extends Fragment {
 
-    private ObservableArrayList<WrittenModel> items = new ObservableArrayList<>();
+    private ObservableArrayList<Thumbnail> items = new ObservableArrayList<>();
     private FragmentMain2Binding binding;
     private Context mContext;
     private int showMe;
@@ -90,7 +89,6 @@ public class Main2Fragment extends Fragment {
     private void switchFinF() {
         ((MainActivity) getActivity()).switchFragment(new Main1Fragment());
     }
-
 
     public void setTheme(String theme){
         this.theme = theme;
