@@ -134,6 +134,7 @@
 
 
         <ImageButton
+           android:id="@+id/btn1Main2Write"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic__mainbtn"

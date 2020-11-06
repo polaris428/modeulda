@@ -1,6 +1,7 @@
 package com.example.modeulda.screen.MainActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.LayoutInflater;
@@ -15,13 +16,15 @@ import androidx.databinding.ObservableArrayList;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.modeulda.ModelDoc.DocOrder;
+import com.example.modeulda.ModelDoc.Thumbnail;
+import com.example.modeulda.ModelReq.ReqPageData;
+import com.example.modeulda.ModelUser.User;
 import com.example.modeulda.R;
 import com.example.modeulda.Util.UserCache;
 import com.example.modeulda.databinding.FragmentMain2Binding;
-import com.example.modeulda.ModelDoc.DocOrder;
-import com.example.modeulda.ModelReq.ReqPageData;
-import com.example.modeulda.ModelDoc.Thumbnail;
-import com.example.modeulda.ModelUser.User;
+import com.example.modeulda.screen.Read.ReadFragment;
+import com.example.modeulda.screen.WritingActivity.WrittingActivity;
 import com.example.modeulda.serverFiles.ClientConnected;
 import com.example.modeulda.serverFiles.Packet;
 import com.google.gson.Gson;
@@ -43,7 +46,7 @@ public class Main2Fragment extends Fragment {
     private int showMe;
     private String theme;
     private Socket socket;
-
+    private ReadFragment readFragment;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -63,7 +66,8 @@ public class Main2Fragment extends Fragment {
         binding.recMain2content.setAdapter(todayAdapter);
 
         todayAdapter.setOnItemClickListener((view, item) -> {
-
+            User user = new User(item.Author);
+            readFragment.firstSet(false, user, item.getTitle());
         });
 
         binding.txtMain2to1.setOnClickListener(view -> switchFinF());
@@ -77,12 +81,17 @@ public class Main2Fragment extends Fragment {
                     showMe = 1;
                 }
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });
 
+        binding.btn1Main2Write.setOnClickListener(view -> {
+            Intent intent = new Intent(getActivity(), WrittingActivity.class);
+            startActivity(intent);
+        });
         return binding.getRoot();
     }
 
@@ -90,11 +99,12 @@ public class Main2Fragment extends Fragment {
         ((MainActivity) getActivity()).switchFragment(new Main1Fragment());
     }
 
-    public void setTheme(String theme){
+    public void setTheme(String theme) {
         this.theme = theme;
         binding.setTodayTheme(theme);
     }
-    public void setItems(ObservableArrayList<Thumbnail> items){
+
+    public void setItems(ObservableArrayList<Thumbnail> items) {
         this.items.addAll(items);
     }
 
@@ -121,7 +131,8 @@ public class Main2Fragment extends Fragment {
             Packet convertedObject = gson.fromJson(string, Packet.class);
             switch (convertedObject.PacketType) {
                 case PageData:
-                    List<Thumbnail> list = gson.fromJson(string,  new TypeToken<List<Thumbnail>>(){}.getType());
+                    List<Thumbnail> list = gson.fromJson(string, new TypeToken<List<Thumbnail>>() {
+                    }.getType());
                     this.items.addAll(list);
             }
         });
@@ -134,6 +145,7 @@ public class Main2Fragment extends Fragment {
         String pdReq = ObjectToJson(rpd);
         AsyncSend(pdReq);
     }
+
     //json으로
     public <T> String ObjectToJson(T object) {
         Gson json = new Gson();
