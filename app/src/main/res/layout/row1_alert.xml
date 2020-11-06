@@ -24,11 +24,12 @@
 
         </ImageView>
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintRight_toRightOf="@+id/frofile"
             android:layout_marginLeft="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/frofile"
+            android:background="@drawable/ic__akert1"
+            app:layout_constraintTop_toBottomOf="@+id/profile"
             >
 
         </ImageView>
