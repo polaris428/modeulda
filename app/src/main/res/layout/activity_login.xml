@@ -97,7 +97,7 @@
                 android:textColor="@android:color/holo_red_dark"
                 android:textSize="10sp"
                 app:layout_constraintTop_toBottomOf="@+id/edtLoginPw"
-                tools:layout_editor_absoluteX="0dp" />
+              />
             <Button
                 android:id="@+id/btnLoginSignin"
                 android:layout_width="match_parent"

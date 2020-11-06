@@ -29,6 +29,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 
 public class TListFragment extends Fragment {
@@ -101,10 +102,9 @@ public class TListFragment extends Fragment {
                     LinkInfo linkInfo = (LinkInfo) gson.fromJson(string, LinkInfo.class);
                     break;
                 case Thumbnail:
-//                    ObservableArrayList<Thumbnail> list =
-//                            new ObservableArrayList<Thumbnail>((ObservableArrayList<Thumbnail>gson
-//                                    .fromJson(string,  new ObservableArrayList<Thumbnail>())));
-//                    this.setItems(list);
+                    Thumbnail[] thumbnails = gson.fromJson(string, Thumbnail[].class);
+                    List<Thumbnail> list = thumbnails.asList(Thumbnail);
+                    this.setItems(thumbnails);
 
             }
         });
