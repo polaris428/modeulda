@@ -54,7 +54,7 @@ public class TodayAdapter extends RecyclerView.Adapter<TodayAdapter.TodayHolder>
 
         void bind(Thumbnail model, TodayAdapter.OnItemClickListener onClickListener) {
             binding.setId(model.getAuthor());
-            binding.setContent(model.getThumb());
+            binding.setContent(model.getContent());
             binding.setLikes(String.valueOf(model.getLikes()));
             binding.setTimeAgo(model.getTime());
             itemView.setOnClickListener(view -> onClickListener.onItemClick(view, model));
