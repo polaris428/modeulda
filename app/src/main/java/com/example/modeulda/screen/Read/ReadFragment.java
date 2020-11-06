@@ -13,11 +13,12 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.modeulda.ModelDoc.Document;
+import com.example.modeulda.ModelReq.ReqDoc;
+import com.example.modeulda.ModelUser.UserModelForS;
 import com.example.modeulda.R;
 import com.example.modeulda.Util.UserCache;
 import com.example.modeulda.databinding.FragmentReadBinding;
-import com.example.modeulda.ModelReq.ReqDoc;
-import com.example.modeulda.ModelUser.UserModelForS;
 import com.example.modeulda.serverFiles.ClientConnected;
 import com.example.modeulda.serverFiles.Packet;
 import com.google.firebase.firestore.auth.User;
@@ -39,7 +40,7 @@ public class ReadFragment extends Fragment {
     private FragmentReadBinding binding;
     private Socket socket;
     private List<String> content;
-
+    private Document document;
 
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -64,6 +65,7 @@ public class ReadFragment extends Fragment {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        sendReqRead();
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
         if (SDK_INT > 8) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -77,7 +79,7 @@ public class ReadFragment extends Fragment {
             Packet convertedObject = gson.fromJson(string, Packet.class);
             switch (convertedObject.PacketType) {
                 case PDoc:
-
+                    this.document = gson.fromJson(string, Document.class);
             }
         });
     }

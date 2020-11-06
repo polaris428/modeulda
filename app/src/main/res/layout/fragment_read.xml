@@ -15,6 +15,9 @@
         <variable
             name="Content"
             type="String" />
+        <variable
+            name="Title"
+            type="String" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
