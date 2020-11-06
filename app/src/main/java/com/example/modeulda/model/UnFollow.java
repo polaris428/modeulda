@@ -5,22 +5,22 @@ import com.google.firebase.firestore.auth.User;
 
 public class UnFollow extends Packet {
 
-    public User Source;
+    public User Target;
 
     public UnFollow() {
     }
 
-    public UnFollow(User Source) {
+    public UnFollow(User Target) {
         this();
-        this.Source = Source;
+        this.Target = Target;
         PacketType = com.example.modeulda.serverFiles.PacketType.UnFollow;
     }
 
-    public User getSource() {
-        return Source;
+    public User getTarget() {
+        return Target;
     }
 
-    public void setSource(User source) {
-        Source = source;
+    public void setTarget(User Target) {
+       this.Target = Target;
     }
 }
