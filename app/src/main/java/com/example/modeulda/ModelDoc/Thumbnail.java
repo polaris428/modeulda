@@ -15,21 +15,21 @@ public class Thumbnail extends Packet {
         this.content = content;
     }
 
-    public String getTitles() {
-        return titles;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitles(String titles) {
-        this.titles = titles;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String titles;
+    public String title;
     public Thumbnail(){}
-    public Thumbnail(String Author, String content, int likes, String titles){
+    public Thumbnail(String Author, String content, int likes, String title){
        this.Author = Author;
        this.content = content;
        this.likes = likes;
-       this.titles = titles;
+       this.title = title;
        PacketType = com.example.modeulda.serverFiles.PacketType.Thumbnail;
     }
     public String getAuthor() {

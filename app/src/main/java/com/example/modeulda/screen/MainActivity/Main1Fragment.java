@@ -20,7 +20,7 @@ import com.example.modeulda.Util.UserCache;
 import com.example.modeulda.databinding.FragmentMainBinding;
 import com.example.modeulda.ModelReq.ReqThemes;
 import com.example.modeulda.model.ThemeModel;
-import com.example.modeulda.ModelUser.UserModelForS;
+import com.example.modeulda.ModelUser.User;
 import com.example.modeulda.screen.WritingActivity.WrittingActivity;
 import com.example.modeulda.serverFiles.ClientConnected;
 import com.example.modeulda.serverFiles.Magic;
@@ -98,7 +98,7 @@ public class Main1Fragment extends Fragment {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
-        ClientConnected clientConnected = new ClientConnected(new UserModelForS(
+        ClientConnected clientConnected = new ClientConnected(new User(
                 UserCache.getUser(mContext).getId()));
         String ccdString = ObjectToJson(clientConnected);
         AsyncConnect(ccdString, (string) -> {

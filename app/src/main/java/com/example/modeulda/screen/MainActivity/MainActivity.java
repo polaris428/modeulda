@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.modeulda.R;
 import com.example.modeulda.Util.UserCache;
 import com.example.modeulda.databinding.ActivityMainBinding;
-import com.example.modeulda.ModelUser.UserModelForS;
+import com.example.modeulda.ModelUser.User;
 import com.example.modeulda.screen.AlertActivity.AlertFragment;
 import com.example.modeulda.screen.MyActivity.MyFragment;
 import com.example.modeulda.screen.SearchActivity.SearchFragment;
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         }
         Toast.makeText(getApplicationContext(), "Connecting to server...", Toast.LENGTH_SHORT).show();
 
-        ClientConnected clientConnected = new ClientConnected(new UserModelForS(
+        ClientConnected clientConnected = new ClientConnected(new User(
                 UserCache.getUser(this).getId()));
         String ccdString = ObjectToJson(clientConnected);
         AsyncConnect(ccdString, (string) -> {

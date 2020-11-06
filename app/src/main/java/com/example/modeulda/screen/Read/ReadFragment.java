@@ -15,13 +15,12 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.modeulda.ModelDoc.Document;
 import com.example.modeulda.ModelReq.ReqDoc;
-import com.example.modeulda.ModelUser.UserModelForS;
+import com.example.modeulda.ModelUser.User;
 import com.example.modeulda.R;
 import com.example.modeulda.Util.UserCache;
 import com.example.modeulda.databinding.FragmentReadBinding;
 import com.example.modeulda.serverFiles.ClientConnected;
 import com.example.modeulda.serverFiles.Packet;
-import com.google.firebase.firestore.auth.User;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -43,7 +42,7 @@ public class ReadFragment extends Fragment {
     private Document document;
 
     private String title;
-    private String author;
+    private User author;
     private List<String> list;
     private int Likes;
 
@@ -67,13 +66,14 @@ public class ReadFragment extends Fragment {
     //바인딩 세팅
     public void setThings(){
        this.title = document.Title;
-       this.author = document.user.getId();
+       this.author = document.user;
        this.list.clear();
        this.list.addAll(document.Content);
        this.Likes = document.Likes;
     }
-    public void firstSet(){
-
+    public void firstSet(Boolean isPrivate, User author, String docName){
+        this.author= author;
+        this.title = docName;
     }
     //글 불러오기
     public void onResume() {
@@ -84,13 +84,13 @@ public class ReadFragment extends Fragment {
         } catch (IOException e) {
             e.printStackTrace();
         }
-      //  sendReqRead();
+        sendReqRead(false, author, title);
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
         if (SDK_INT > 8) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
-        ClientConnected clientConnected = new ClientConnected(new UserModelForS(
+        ClientConnected clientConnected = new ClientConnected(new User(
                 UserCache.getUser(mContext).getId()));
         String ccdString = ObjectToJson(clientConnected);
         AsyncConnect(ccdString, (string) -> {

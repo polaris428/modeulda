@@ -21,7 +21,7 @@ import com.example.modeulda.databinding.FragmentTListBinding;
 import com.example.modeulda.ModelDoc.DocOrder;
 import com.example.modeulda.ModelReq.ReqPageData;
 import com.example.modeulda.ModelDoc.Thumbnail;
-import com.example.modeulda.ModelUser.UserModelForS;
+import com.example.modeulda.ModelUser.User;
 import com.example.modeulda.screen.Read.ReadFragment;
 import com.example.modeulda.serverFiles.ClientConnected;
 import com.example.modeulda.serverFiles.Packet;
@@ -65,7 +65,8 @@ public class TListFragment extends Fragment {
         TlistAdapter adapter = new TlistAdapter();
         binding.recTlist.setAdapter(adapter);
         adapter.setOnItemClickListener((view, item) -> {
-               // readFragment.firstSet(false, item.Author, item.);
+           User user = new User(item.Author);
+                readFragment.firstSet(false, user, item.getTitle());
         });
 
         binding.spiTlistmenu.setOnItemClickListener((adapterView, view, position, id) -> {
@@ -124,7 +125,7 @@ public class TListFragment extends Fragment {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
-        ClientConnected clientConnected = new ClientConnected(new UserModelForS(
+        ClientConnected clientConnected = new ClientConnected(new User(
                 UserCache.getUser(mContext).getId()));
         String ccdString = ObjectToJson(clientConnected);
         AsyncConnect(ccdString, (string) -> {

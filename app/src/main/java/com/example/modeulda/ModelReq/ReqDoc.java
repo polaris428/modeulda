@@ -1,7 +1,7 @@
 package com.example.modeulda.ModelReq;
 
+import com.example.modeulda.ModelUser.User;
 import com.example.modeulda.serverFiles.Packet;
-import com.google.firebase.firestore.auth.User;
 
 public class ReqDoc extends Packet {
     public ReqDoc(){}
@@ -23,13 +23,7 @@ public class ReqDoc extends Packet {
         IsPrivate = aPrivate;
     }
 
-    public User getAuthor() {
-        return Author;
-    }
 
-    public void setAuthor(User author) {
-        Author = author;
-    }
 
     public String getDocName() {
         return DocName;
@@ -40,7 +34,16 @@ public class ReqDoc extends Packet {
     }
 
     public Boolean IsPrivate;
-    public User Author;
+
+    public com.example.modeulda.ModelUser.User getAuthor() {
+        return Author;
+    }
+
+    public void setAuthor(com.example.modeulda.ModelUser.User author) {
+        Author = author;
+    }
+
+    public com.example.modeulda.ModelUser.User Author;
     public String DocName;
 
 
