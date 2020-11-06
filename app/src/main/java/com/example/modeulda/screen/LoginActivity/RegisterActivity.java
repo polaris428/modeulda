@@ -35,7 +35,10 @@ public class RegisterActivity extends AppCompatActivity {
         binding.setPw2("");
         //회원가입버튼
         binding.btnRegiSignup.setOnClickListener(view -> {
+            binding.msg.setText("");
+            binding.pswmsg.setText("");
             register(binding.getId(), binding.getEmail(), binding.getPw1(), binding.getPw2());
+
         });
         //이메일 본인인증 활성화
         binding.cboxRegi.setOnClickListener(view -> binding.setBtnen(binding.cboxRegi.isChecked()));
@@ -55,6 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
             binding.pswmsg.setText("비밀번호가 일치하지 않습니다");
             return;
         }
+
         firebaseFirestore
                 .collection("users")
                 .document(email)
