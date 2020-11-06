@@ -40,7 +40,6 @@
                 android:text="주제"
                 android:textColor="#8531251B"
                 android:textSize="30sp"
-
                 app:layout_constraintRight_toLeftOf="@+id/txtMain2to2"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
