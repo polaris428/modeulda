@@ -4,13 +4,23 @@ import com.example.modeulda.model.UserModelForS;
 
 public class ClientConnected extends Packet {
     public UserModelForS ums;
+    public Boolean Register;
 
-    public ClientConnected() {
-        PacketType = com.example.modeulda.serverFiles.PacketType.ClientConnected;
+    public Boolean getRegister() {
+        return Register;
     }
 
-    public ClientConnected(UserModelForS ums){
+    public void setRegister(Boolean register) {
+        Register = register;
+    }
+
+    public ClientConnected() {
+    }
+
+    public ClientConnected(UserModelForS ums, Boolean register){
         this();
         this.ums = ums;
+        this.Register = register;
+        PacketType = com.example.modeulda.serverFiles.PacketType.ClientConnected;
     }
 }
