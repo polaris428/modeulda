@@ -25,11 +25,13 @@ public class WrittingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_writting);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_writting);
-
-
-
         Animation mAnim1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotae);
         mAnim1.setInterpolator(getApplicationContext(), android.R.anim.accelerate_interpolator);
+
+        binding.btns.setOnClickListener(view -> {
+            btns.startActionMode((ActionMode.Callback) mAnim1);
+        });
+
 
         btns.setOnClickListener(new View.OnClickListener() {
             @Override

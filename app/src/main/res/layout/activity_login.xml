@@ -96,7 +96,7 @@
                 android:gravity="center"
                 android:text="@={errorMsg, default=' '}"
                 android:textColor="@android:color/holo_red_dark"
-                android:textSize="10sp"
+                android:textSize="15sp"
 
                 app:layout_constraintTop_toBottomOf="@+id/edtLoginPw"
               />
