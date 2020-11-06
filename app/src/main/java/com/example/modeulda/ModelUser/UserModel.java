@@ -3,10 +3,10 @@ package com.example.modeulda.ModelUser;
 import com.example.modeulda.serverFiles.Packet;
 
 public class UserModel extends Packet {
-    private String id;
-    private String email;
-    private String pw;
-    private String time;
+    public String id;
+    public String email;
+    public String pw;
+    public String time;
     public UserModel(){}
 
     public UserModel(String id, String email, String pw, String time) {

@@ -42,6 +42,12 @@ public class ReadFragment extends Fragment {
     private List<String> content;
     private Document document;
 
+    private String title;
+    private String author;
+    private List<String> list;
+    private int Likes;
+
+
     public void onAttach(Context context) {
         super.onAttach(context);
         mContext = context;
@@ -53,10 +59,23 @@ public class ReadFragment extends Fragment {
         ContentAdapter adapter = new ContentAdapter(getChildFragmentManager());
 
         adapter.setItem(content);
+
+        setThings();
         return binding.getRoot();
     }
 
-    //주제 불러오기
+    //바인딩 세팅
+    public void setThings(){
+       this.title = document.Title;
+       this.author = document.user.getId();
+       this.list.clear();
+       this.list.addAll(document.Content);
+       this.Likes = document.Likes;
+    }
+    public void firstSet(){
+
+    }
+    //글 불러오기
     public void onResume() {
         super.onResume();
         try {
@@ -65,7 +84,7 @@ public class ReadFragment extends Fragment {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        sendReqRead();
+      //  sendReqRead();
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
         if (SDK_INT > 8) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();

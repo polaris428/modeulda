@@ -22,6 +22,7 @@ import com.example.modeulda.ModelDoc.DocOrder;
 import com.example.modeulda.ModelReq.ReqPageData;
 import com.example.modeulda.ModelDoc.Thumbnail;
 import com.example.modeulda.ModelUser.UserModelForS;
+import com.example.modeulda.screen.Read.ReadFragment;
 import com.example.modeulda.serverFiles.ClientConnected;
 import com.example.modeulda.serverFiles.Packet;
 import com.google.gson.Gson;
@@ -45,6 +46,7 @@ public class TListFragment extends Fragment {
     private Socket socket;
     private String theme;
     private DocOrder docOrder;
+    private ReadFragment readFragment;
 
     @Override
     public void onAttach(Context context) {
@@ -63,7 +65,7 @@ public class TListFragment extends Fragment {
         TlistAdapter adapter = new TlistAdapter();
         binding.recTlist.setAdapter(adapter);
         adapter.setOnItemClickListener((view, item) -> {
-
+               // readFragment.firstSet(false, item.Author, item.);
         });
 
         binding.spiTlistmenu.setOnItemClickListener((adapterView, view, position, id) -> {

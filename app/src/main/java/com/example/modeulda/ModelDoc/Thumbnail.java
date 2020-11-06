@@ -6,6 +6,7 @@ public class Thumbnail extends Packet {
     public String Author;
     public String Thumb;
     public int likes;
+
     public Thumbnail(){}
     public Thumbnail(String Author, String Thumb, int likes){
        this.Author = Author;
