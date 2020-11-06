@@ -8,20 +8,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ObservableArrayList;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.modeulda.R;
 import com.example.modeulda.Util.UserCache;
 import com.example.modeulda.databinding.FragmentTListBinding;
+import com.example.modeulda.model.DocOrder;
+import com.example.modeulda.model.ReqPageData;
 import com.example.modeulda.model.Thumbnail;
 import com.example.modeulda.model.UserModelForS;
 import com.example.modeulda.serverFiles.ClientConnected;
-import com.example.modeulda.serverFiles.LinkInfo;
 import com.example.modeulda.serverFiles.Packet;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,6 +33,8 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
+import java.util.Objects;
 
 
 public class TListFragment extends Fragment {
@@ -37,6 +43,9 @@ public class TListFragment extends Fragment {
     private ObservableArrayList<Thumbnail> items = new ObservableArrayList<>();
     private int showMe;
     private Socket socket;
+    private String theme;
+    private DocOrder docOrder;
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -59,15 +68,39 @@ public class TListFragment extends Fragment {
 
         binding.spiTlistmenu.setOnItemClickListener((adapterView, view, position, id) -> {
             if (position == 0) {
-                showMe = 0;
+                this.docOrder = DocOrder.popular;
+                sendReqDoc(this.theme, 0, 20, docOrder);
             } else if (position == 1) {
-                showMe = 1;
+                this.docOrder = DocOrder.popular;
+                sendReqDoc(this.theme, 0, 20, docOrder);
+            }
+        });
+
+        binding.recTlist.addOnScrollListener(new RecyclerView.OnScrollListener() {
+
+
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                int lastPosition =
+                        ((LinearLayoutManager) Objects.requireNonNull(recyclerView.getLayoutManager())).findLastCompletelyVisibleItemPosition();
+                int totalCount = Objects.requireNonNull(recyclerView.getAdapter()).getItemCount();
+                if(lastPosition==totalCount){
+                    sendReqDoc(theme, lastPosition+1, 20, docOrder);
+                }
             }
         });
         return binding.getRoot();
     }
 
     public void setTheme(String theme){
+        this.theme = theme;
         binding.setTheme(theme);
     }
     public void setItems(ObservableArrayList<Thumbnail> items){
@@ -83,13 +116,12 @@ public class TListFragment extends Fragment {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        sendReqDoc(this.theme, 0, 20, DocOrder.popular);
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
         if (SDK_INT > 8) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
-        Toast.makeText(getActivity().getApplicationContext(), "Connecting to server...", Toast.LENGTH_SHORT).show();
-
         ClientConnected clientConnected = new ClientConnected(new UserModelForS(
                 UserCache.getUser(mContext).getId()));
         String ccdString = ObjectToJson(clientConnected);
@@ -97,18 +129,20 @@ public class TListFragment extends Fragment {
             Gson gson = new Gson();
             Packet convertedObject = gson.fromJson(string, Packet.class);
             switch (convertedObject.PacketType) {
-                case LinkInfo:
-                    LinkInfo linkInfo = (LinkInfo) gson.fromJson(string, LinkInfo.class);
-                    break;
-                case Thumbnail:
-                    //List<Thumbnail> list = gson.fromJson(string, List<Thumbnail>)
-
+                case PageData:
+                    List<Thumbnail> list = gson.fromJson(string,  new TypeToken<List<Thumbnail>>(){}.getType());
+                    this.items.addAll(list);
             }
         });
     }
-//    ThemeModel themeModel = (ThemeModel) gson.fromJson(string, ThemeModel.class);
-//                    fMain1.setThemes(themeModel);
 
+//글요청
+//썸네일 요청
+public void sendReqDoc(String theme, int startIndex, int count, DocOrder docOrder) {
+    ReqPageData rpd = new ReqPageData(theme, startIndex, count, docOrder);
+    String pdReq = ObjectToJson(rpd);
+    AsyncSend(pdReq);
+}
     //json으로
     public <T> String ObjectToJson(T object) {
         Gson json = new Gson();
