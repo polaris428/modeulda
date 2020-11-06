@@ -19,6 +19,7 @@ public class TlistAdapter extends RecyclerView.Adapter<TlistAdapter.TlistHolder>
     public interface OnItemClickListener {
         void onItemClick(View view, Thumbnail item);
     }
+
     public void setOnItemClickListener(TlistAdapter.OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }

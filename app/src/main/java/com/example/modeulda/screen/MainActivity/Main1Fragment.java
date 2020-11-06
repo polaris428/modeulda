@@ -18,14 +18,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.example.modeulda.R;
 import com.example.modeulda.Util.UserCache;
 import com.example.modeulda.databinding.FragmentMainBinding;
+import com.example.modeulda.model.ReqThemes;
 import com.example.modeulda.model.ThemeModel;
 import com.example.modeulda.model.UserModelForS;
 import com.example.modeulda.screen.WritingActivity.WrittingActivity;
 import com.example.modeulda.serverFiles.ClientConnected;
-import com.example.modeulda.serverFiles.LinkInfo;
 import com.example.modeulda.serverFiles.Magic;
 import com.example.modeulda.serverFiles.Packet;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,6 +34,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 
 public class Main1Fragment extends Fragment {
@@ -40,6 +42,7 @@ public class Main1Fragment extends Fragment {
     public static Main1Fragment newInstance() {
         return new Main1Fragment();
     }
+
     TListFragment tListFragment;
 
     private ObservableArrayList<ThemeModel> items = new ObservableArrayList<>();
@@ -89,13 +92,12 @@ public class Main1Fragment extends Fragment {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        sendReqTheme();
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
         if (SDK_INT > 8) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
-        Toast.makeText(getActivity().getApplicationContext(), "Connecting to server...", Toast.LENGTH_SHORT).show();
-
         ClientConnected clientConnected = new ClientConnected(new UserModelForS(
                 UserCache.getUser(mContext).getId()));
         String ccdString = ObjectToJson(clientConnected);
@@ -103,19 +105,14 @@ public class Main1Fragment extends Fragment {
             Gson gson = new Gson();
             Packet convertedObject = gson.fromJson(string, Packet.class);
             switch (convertedObject.PacketType) {
-                case LinkInfo:
-                    LinkInfo linkInfo = (LinkInfo) gson.fromJson(string, LinkInfo.class);
-                    break;
-                case ThemeModel:
-                    ThemeModel themeModel = (ThemeModel) gson.fromJson(string, ThemeModel.class);
-                    this.setThemes(themeModel);
+                case Themes:
+                    List<String> list = gson.fromJson(string, new TypeToken<List<String>>(){}.getType());
+                    for(int i =0; i<8;i++){
+                        ThemeModel tm = new ThemeModel(list.get(i));
+                        this.items.add(tm);
+                    }
             }
         });
-    }
-
-    public void setThemes(ThemeModel themeitem) {
-        items.add(themeitem);
-//        items.set(8, magic.GetTheme());
     }
 
     //오늘의 주제로 넘어가기
@@ -128,8 +125,15 @@ public class Main1Fragment extends Fragment {
         startActivity(new Intent(((MainActivity) getActivity()), WrittingActivity.class));
     }
 
+
     //서버관련
 
+    //주제요청
+    public void sendReqTheme() {
+        ReqThemes reqThemes = new ReqThemes();
+        String ThemeReq = ObjectToJson(reqThemes);
+        AsyncSend(ThemeReq);
+    }
 
     //json으로
     public <T> String ObjectToJson(T object) {

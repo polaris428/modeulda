@@ -8,16 +8,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.modeulda.databinding.RowWrittenBinding;
-import com.example.modeulda.model.WrittenModel;
+import com.example.modeulda.model.Thumbnail;
 
 import java.util.List;
 
 public class TodayAdapter extends RecyclerView.Adapter<TodayAdapter.TodayHolder> {
-    private List<WrittenModel> mItem;
+    private List<Thumbnail> mItem;
     private TodayAdapter.OnItemClickListener onItemClickListener;
 
     public interface OnItemClickListener {
-        void onItemClick(View view, WrittenModel item);
+        void onItemClick(View view, Thumbnail item);
     }
 
     public void setOnItemClickListener(TodayAdapter.OnItemClickListener onItemClickListener) {
@@ -32,7 +32,7 @@ public class TodayAdapter extends RecyclerView.Adapter<TodayAdapter.TodayHolder>
 
     @Override
     public void onBindViewHolder(@NonNull TodayAdapter.TodayHolder holder, int position) {
-        WrittenModel model = mItem.get(position);
+        Thumbnail model = mItem.get(position);
         holder.bind(model, onItemClickListener);
     }
 
@@ -52,12 +52,11 @@ public class TodayAdapter extends RecyclerView.Adapter<TodayAdapter.TodayHolder>
             this.binding = binding;
         }
 
-        void bind(WrittenModel model, TodayAdapter.OnItemClickListener onClickListener) {
-            binding.setId(model.getAuthor().getId());
-            binding.setContent(model.getContent().get(0));
+        void bind(Thumbnail model, TodayAdapter.OnItemClickListener onClickListener) {
+            binding.setId(model.getAuthor());
+            binding.setContent(model.getThumb());
             binding.setLikes(String.valueOf(model.getLikes()));
             binding.setTimeAgo(model.getTime());
-            binding.setTitle(model.getTitle());
             itemView.setOnClickListener(view -> onClickListener.onItemClick(view, model));
         }
     }
