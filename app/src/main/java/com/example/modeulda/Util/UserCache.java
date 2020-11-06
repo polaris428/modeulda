@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.example.modeulda.model.UserModel;
+import com.example.modeulda.ModelUser.UserModel;
 import com.google.gson.Gson;
 
 public class UserCache {

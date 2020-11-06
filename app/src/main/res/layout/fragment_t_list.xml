@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <import type="androidx.databinding.ObservableArrayList"/>
-        <import type="com.example.modeulda.model.WrittenModel"/>
+        <import type="com.example.modeulda.ModelDoc.WrittenModel"/>
         <variable
             name="theme"
             type="String" />

@@ -1,8 +1,9 @@
-package com.example.modeulda.model;
+package com.example.modeulda.ModelSocial;
 
 import com.example.modeulda.serverFiles.Packet;
 
-public class Like extends Packet {
+public class Unlike extends Packet {
+
     public String getTheme() {
         return Theme;
     }
@@ -23,12 +24,11 @@ public class Like extends Packet {
     public String DocName;
 
 
-    public Like(){}
-    public Like(String Theme, String DocName){
-       this();
-       this.Theme = Theme;
-       this.DocName = DocName;
-        PacketType = com.example.modeulda.serverFiles.PacketType.Like;
+    public Unlike(){}
+    public Unlike(String Theme, String DocName){
+        this();
+        this.Theme = Theme;
+        this.DocName = DocName;
+        PacketType = com.example.modeulda.serverFiles.PacketType.Unlike;
     }
-
 }
