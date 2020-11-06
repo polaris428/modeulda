@@ -49,6 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void register(String id, String email, String pw1, String pw2) {
         if (id.isEmpty() || email.isEmpty() || pw1.isEmpty() || pw2.isEmpty()) {
             Toast.makeText(this, "빈칸을 전부 채워 주세여", Toast.LENGTH_SHORT).show();
+
             return;
         }
         if (!pw1.equals(pw2)) {
