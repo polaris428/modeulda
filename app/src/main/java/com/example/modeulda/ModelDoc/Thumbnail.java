@@ -4,14 +4,32 @@ import com.example.modeulda.serverFiles.Packet;
 
 public class Thumbnail extends Packet {
     public String Author;
-    public String Thumb;
+    public String content;
     public int likes;
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getTitles() {
+        return titles;
+    }
+
+    public void setTitles(String titles) {
+        this.titles = titles;
+    }
+
+    public String titles;
     public Thumbnail(){}
-    public Thumbnail(String Author, String Thumb, int likes){
+    public Thumbnail(String Author, String content, int likes, String titles){
        this.Author = Author;
-       this.Thumb = Thumb;
+       this.content = content;
        this.likes = likes;
+       this.titles = titles;
        PacketType = com.example.modeulda.serverFiles.PacketType.Thumbnail;
     }
     public String getAuthor() {
@@ -20,14 +38,6 @@ public class Thumbnail extends Packet {
 
     public void setAuthor(String author) {
         Author = author;
-    }
-
-    public String getThumb() {
-        return Thumb;
-    }
-
-    public void setThumb(String thumb) {
-        Thumb = thumb;
     }
 
     public int getLikes() {
