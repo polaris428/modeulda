@@ -37,11 +37,18 @@ public class RegisterActivity extends AppCompatActivity {
         binding.btnRegiSignup.setOnClickListener(view -> {
             register(binding.getId(), binding.getEmail(), binding.getPw1(), binding.getPw2());
         });
+<<<<<<< Updated upstream
         //이메일 본인인증 활성화
         binding.cboxRegi.setOnClickListener(view -> binding.setBtnen(binding.cboxRegi.isChecked()));
         //이메일 본인인증 메일 송신 버튼
         binding.btnRegicer.setOnClickListener(view -> {
                 Certification();
+=======
+        binding.cboxRegi.setOnClickListener(view -> {
+            if(binding.cboxRegi.isChecked()){
+                binding.setBtnen(true);
+            }
+>>>>>>> Stashed changes
         });
     }
 

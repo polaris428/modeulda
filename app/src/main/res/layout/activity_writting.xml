@@ -6,7 +6,9 @@
     <variable
         name="title"
         type="String" />
-
+<variable
+    name="content"
+    type="String" />
 </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,7 +20,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.1">
-            <View
+            <EditText
                 android:id="@+id/line1"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
@@ -32,7 +34,7 @@
 
                 />
 
-            <View
+            <EditText
                 android:id="@+id/line2"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
@@ -111,8 +113,9 @@
 
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/view"
+        <EditText
+            android:text="@={content}"
+            android:id="@+id/edtWriting"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginLeft="30dp"
@@ -127,7 +130,7 @@
 
             >
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </EditText>
 
 
 
@@ -137,7 +140,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toTopOf="@+id/box"
-                app:layout_constraintTop_toBottomOf="@+id/view"
+                app:layout_constraintTop_toBottomOf="@+id/edtWriting"
                 android:orientation="vertical"
 
 
