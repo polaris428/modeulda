@@ -14,11 +14,10 @@ public class ClientConnected extends Packet {
         Register = register;
     }
 
-    public ClientConnected() {
+    public ClientConnected(UserModelForS userModelForS) {
     }
 
     public ClientConnected(UserModelForS ums, Boolean register){
-        this();
         this.ums = ums;
         this.Register = register;
         PacketType = com.example.modeulda.serverFiles.PacketType.ClientConnected;

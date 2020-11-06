@@ -11,6 +11,7 @@ public class PDoc extends Packet {
     public PDoc(Document doc) {
         this();
         this.Doc = doc;
+        PacketType = com.example.modeulda.serverFiles.PacketType.PDoc;
     }
 
     public Document getDoc() {
