@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-<<<<<<< Updated upstream
+
     <data>
         <variable
             name="id"
@@ -30,41 +30,20 @@
             type="String" />
 
 
-=======
 
-    <data>
-
-        <variable
-            name="id"
-            type="String" />
-
-        <variable
-            name="email"
-            type="String" />
-
-        <variable
-            name="pw1"
-            type="String" />
-
-        <variable
-            name="pw2"
-            type="String" />
-
-        <variable
-            name="btnen"
-            type="Boolean" />
->>>>>>> Stashed changes
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/box1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-<<<<<<< Updated upstream
-        >
-=======
+
+        
+
         tools:context=".screen.LoginActivity.RegisterActivity">
->>>>>>> Stashed changes
+
+        
+
 
         <TextView
             android:id="@+id/text"
@@ -73,20 +52,14 @@
             android:layout_marginBottom="700dp"
             android:text="회원가입"
             android:textColor="#31251b"
-<<<<<<< Updated upstream
+
             android:textSize="25sp"
             app:layout_constraintVertical_bias="0.06"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
-=======
-            android:textSize="35sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
->>>>>>> Stashed changes
+
 
         </TextView>
 
@@ -94,22 +67,22 @@
             android:id="@+id/line1"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-<<<<<<< Updated upstream
+
             android:layout_marginRight="40dp"
             android:background="#ad9688"
             app:layout_constraintVertical_bias="0.02"
             app:layout_constraintBottom_toBottomOf="@+id/constraintLayout3"
-=======
+
             android:layout_centerInParent="true"
             android:layout_marginTop="10dp"
             android:layout_marginRight="40dp"
             android:background="#ad9688"
->>>>>>> Stashed changes
+
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text" />
 
-<<<<<<< Updated upstream
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout3"
@@ -118,7 +91,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
-=======
+
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="100dp"
@@ -136,7 +109,7 @@
             android:text="아이디"
             android:textColor="#31251b"
             android:textSize="35sp"
->>>>>>> Stashed changes
+
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/line1"
@@ -359,8 +332,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-<<<<<<< Updated upstream
-=======
+
         <Button
             android:id="@+id/btnRegiImg"
             android:layout_width="wrap_content"
@@ -425,7 +397,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtRegiPw2" />
->>>>>>> Stashed changes
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
