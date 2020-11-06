@@ -1,5 +1,6 @@
-package com.example.modeulda.model;
+package com.example.modeulda.ModelReq;
 
+import com.example.modeulda.ModelDoc.DocOrder;
 import com.example.modeulda.serverFiles.Packet;
 
 public class ReqPageData extends Packet {
@@ -27,18 +28,18 @@ public class ReqPageData extends Packet {
         Count = count;
     }
 
-    public com.example.modeulda.model.DocOrder getDocOrder() {
+    public com.example.modeulda.ModelDoc.DocOrder getDocOrder() {
         return DocOrder;
     }
 
-    public void setDocOrder(com.example.modeulda.model.DocOrder docOrder) {
+    public void setDocOrder(com.example.modeulda.ModelDoc.DocOrder docOrder) {
         DocOrder = docOrder;
     }
 
     public String Theme;
     public int StartIndex;
     public int Count;
-    public DocOrder DocOrder;
+    public com.example.modeulda.ModelDoc.DocOrder DocOrder;
     public ReqPageData(){}
 
     public ReqPageData(String theme, int startIndex, int count, DocOrder docOrder){

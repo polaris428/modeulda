@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.modeulda.databinding.RowWrittenBinding;
-import com.example.modeulda.model.Thumbnail;
+import com.example.modeulda.ModelDoc.Thumbnail;
 
 import java.util.List;
 

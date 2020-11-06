@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil;
 
 import com.example.modeulda.R;
 import com.example.modeulda.databinding.ActivityRegisterBinding;
-import com.example.modeulda.model.UserModel;
+import com.example.modeulda.ModelUser.UserModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 

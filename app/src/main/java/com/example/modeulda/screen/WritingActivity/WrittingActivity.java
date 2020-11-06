@@ -13,7 +13,7 @@ import androidx.databinding.DataBindingUtil;
 
 import com.example.modeulda.R;
 import com.example.modeulda.databinding.ActivityWrittingBinding;
-import com.example.modeulda.model.WrittenModel;
+import com.example.modeulda.ModelDoc.WrittenModel;
 
 public class WrittingActivity extends AppCompatActivity {
    private ActivityWrittingBinding binding;

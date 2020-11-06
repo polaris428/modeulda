@@ -1,4 +1,4 @@
-package com.example.modeulda.model;
+package com.example.modeulda.ModelReq;
 
 import com.example.modeulda.serverFiles.Packet;
 import com.google.firebase.firestore.auth.User;

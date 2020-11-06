@@ -1,6 +1,6 @@
 package com.example.modeulda.serverFiles;
 
-import com.example.modeulda.model.UserModelForS;
+import com.example.modeulda.ModelUser.UserModelForS;
 
 public class ClientConnected extends Packet {
     public UserModelForS ums;

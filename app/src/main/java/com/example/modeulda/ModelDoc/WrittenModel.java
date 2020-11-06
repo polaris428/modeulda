@@ -1,5 +1,6 @@
-package com.example.modeulda.model;
+package com.example.modeulda.ModelDoc;
 
+import com.example.modeulda.ModelUser.UserModel;
 import com.example.modeulda.serverFiles.Packet;
 
 import java.util.List;

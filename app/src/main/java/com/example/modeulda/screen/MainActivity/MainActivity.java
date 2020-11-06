@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.modeulda.R;
 import com.example.modeulda.Util.UserCache;
 import com.example.modeulda.databinding.ActivityMainBinding;
-import com.example.modeulda.model.UserModelForS;
+import com.example.modeulda.ModelUser.UserModelForS;
 import com.example.modeulda.screen.AlertActivity.AlertFragment;
 import com.example.modeulda.screen.MyActivity.MyFragment;
 import com.example.modeulda.screen.SearchActivity.SearchFragment;

@@ -1,27 +1,26 @@
-package com.example.modeulda.model;
+package com.example.modeulda.ModelDoc;
 
 import com.example.modeulda.serverFiles.Packet;
-
-import org.w3c.dom.Document;
 
 public class PDoc extends Packet {
     public PDoc() {
     }
 
-    public PDoc(Document doc) {
+    public PDoc(Document document) {
         this();
-        this.Doc = doc;
+        this.doc = document;
         PacketType = com.example.modeulda.serverFiles.PacketType.PDoc;
     }
 
+
     public Document getDoc() {
-        return Doc;
+        return doc;
     }
 
     public void setDoc(Document doc) {
-        Doc = doc;
+        this.doc = doc;
     }
 
-    public Document Doc;
+    public Document doc;
 
 }

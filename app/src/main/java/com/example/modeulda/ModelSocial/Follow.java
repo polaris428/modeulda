@@ -1,19 +1,18 @@
-package com.example.modeulda.model;
+package com.example.modeulda.ModelSocial;
 
 import com.example.modeulda.serverFiles.Packet;
 import com.google.firebase.firestore.auth.User;
 
-public class UnFollow extends Packet {
-
+public class Follow extends Packet {
     public User Target;
 
-    public UnFollow() {
+    public Follow() {
     }
 
-    public UnFollow(User Target) {
+    public Follow(User Target) {
         this();
         this.Target = Target;
-        PacketType = com.example.modeulda.serverFiles.PacketType.UnFollow;
+        PacketType = com.example.modeulda.serverFiles.PacketType.Follow;
     }
 
     public User getTarget() {

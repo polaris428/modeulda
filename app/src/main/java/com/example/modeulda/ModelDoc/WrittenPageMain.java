@@ -1,4 +1,4 @@
-package com.example.modeulda.model;
+package com.example.modeulda.ModelDoc;
 
 public class WrittenPageMain {
    public String Theme;

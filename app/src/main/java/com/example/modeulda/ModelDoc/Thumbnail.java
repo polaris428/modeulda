@@ -1,4 +1,4 @@
-package com.example.modeulda.model;
+package com.example.modeulda.ModelDoc;
 
 import com.example.modeulda.serverFiles.Packet;
 
