@@ -101,9 +101,7 @@ public class TListFragment extends Fragment {
                     LinkInfo linkInfo = (LinkInfo) gson.fromJson(string, LinkInfo.class);
                     break;
                 case Thumbnail:
-//                    Thumbnail[] thumbnails = gson.fromJson(string, Thumbnail[].class);
-//                    List<Thumbnail> list = thumbnails.asList(Thumbnail);
-//                    this.setItems(thumbnails);
+                    //List<Thumbnail> list = gson.fromJson(string, List<Thumbnail>)
 
             }
         });

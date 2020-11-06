@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 finish();
                             })
                             .addOnFailureListener(runnable2 -> {
-                                Toast.makeText(this, "실패", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(this, runnable2.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                             });
                 })
                 .addOnFailureListener(runnable -> {

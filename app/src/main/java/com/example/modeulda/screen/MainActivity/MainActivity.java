@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.modeulda.R;
 import com.example.modeulda.Util.UserCache;
 import com.example.modeulda.databinding.ActivityMainBinding;
-import com.example.modeulda.model.ThemeModel;
 import com.example.modeulda.model.UserModelForS;
 import com.example.modeulda.screen.AlertActivity.AlertFragment;
 import com.example.modeulda.screen.MyActivity.MyFragment;
@@ -93,9 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 case LinkInfo:
                     LinkInfo linkInfo = (LinkInfo) gson.fromJson(string, LinkInfo.class);
                     break;
-                case ThemeModel:
-                    ThemeModel themeModel = (ThemeModel) gson.fromJson(string, ThemeModel.class);
-                    fMain1.setThemes(themeModel);
+
             }
         });
     }
