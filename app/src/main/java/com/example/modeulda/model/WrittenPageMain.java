@@ -3,11 +3,11 @@ package com.example.modeulda.model;
 public class WrittenPageMain {
    public String Theme;
    public int position;
-   public SortType sortType;
+   public DocOrder docOrder;
 
 }
 
-enum SortType{
+enum DocOrder{
    recent,
    popular
 }
